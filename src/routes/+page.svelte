@@ -82,7 +82,7 @@
 <section
 	animate-in
 	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6 }}
-	class="my-48 flex flex-col items-center justify-center text-gray-900"
+	class="my-24 md:my-48 flex flex-col items-center justify-center text-gray-900"
 >
 	<h1
 		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl"
@@ -104,9 +104,9 @@
 	</h1>
 
 	<h1
-		class="relative mx-auto w-fit text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl"
+		class="relative  mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl"
 	>
-		redefining <span class="inline-flg font-normal italic">
+		redefining <span class="inline-flex mx-2 md:mx-3 font-normal italic">
 			<TextScramble text="digital" duration={2.8} speed={0.06} />
 		</span> Solutions
 	</h1>
@@ -147,7 +147,7 @@
 			animate-in
 			use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16">
-			<h3 class="wwd-design text-4xl font-medium md:text-5xl lg:text-6xl">Design</h3>
+			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
 			<div
 				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
 			>
@@ -162,7 +162,7 @@
 			animate-in
 			use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16">
-			<h3 class="wwd-development text-4xl font-medium md:text-5xl lg:text-6xl">Development</h3>
+			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
 			<div
 				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
 			>
@@ -176,9 +176,11 @@
 </section>
 
 <section id="projects">
-	<div class="p-16 space-y-12">
+	<div class="p-6 md:p-12 lg:p-16 space-y-12">
 		{#each projects as project}
-			<Project {project} />
+			<a href={project.link} target="_blank" class="">
+				<Project {project} />
+			</a>
 		{/each}
 	</div>
 </section>
@@ -192,17 +194,17 @@
 			<div
 				animate-in
 				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.5 }}
-				class="flex flex-col items-start space-y-8 p-8"
+				class="flex flex-col items-start space-y-4 md:space-y-8 p-6 md:p-8 border-b md:border-none"
 			>
 				<div class="text-2xl">{fact.emoji}</div>
-				<h3 class="text-2xl font-medium">{fact.title}</h3>
-				<p class="text-lg text-gray-600">{fact.text}</p>
+				<h3 class="text-lg md:text-2xl font-medium">{fact.title}</h3>
+				<p class="text-sm md:text-lg text-gray-600">{fact.text}</p>
 			</div>
 		{/each}
 	</div>
 </section>
 
-<section class="mx-auto flex flex-col max-w-7xl items-center justify-center space-y-12 p-8 md:p-24 lg:p-32">
+<section class="mx-auto flex flex-col max-w-7xl items-center justify-center space-y-12 p-12 md:p-24 lg:p-32">
 	<p
 		animate-in
 		use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}

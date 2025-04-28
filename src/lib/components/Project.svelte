@@ -1,6 +1,7 @@
 <script>
 	import { Tooltip } from 'bits-ui';
 	import { animateIn } from '$lib';
+	import {Cursor} from '$shared';
 	import Icon from '@iconify/svelte';
 	let { project } = $props();
 
@@ -29,15 +30,21 @@
 				return 'JavaScript';
 		}
 	}
+
+	let isActive = $state(false);
 </script>
+
+<Cursor isActive={isActive} link secondary />
 
 {#if project.image}
 	<div
-    
-    animate-in
-    use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
+	onmouseenter={() => (isActive = true)}
+	onmouseleave={() => (isActive = false)}
+	role="region"
+	animate-in
+	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
 
-    class="project-container max-w-7xl">
+	class="project-container max-w-7xl cursor-none">
 		<div class="relative">
 			<img
 				src={project.image.fields.file.url}
@@ -56,7 +63,7 @@
 									class="flex w-fit items-center rounded-full p-1 transition-colors hover:bg-gray-300"
 									rel="noopener noreferrer"
 								>
-									<div class="flex size-6 items-center justify-center md:size-8">
+									<div class="flex size-4 items-center justify-center md:size-8">
 										<Icon icon={tech} width="20" height="20" />
 									</div>
 								</div>
@@ -74,9 +81,9 @@
 			</div>
 		</div>
 		<div class="flex justify-between py-4">
-			<h6 class="basis-1/3 text-2xl font-medium">{project.title}</h6>
+			<h6 class="basis-1/3 text-lg md:text-2xl font-medium">{project.title}</h6>
 
-			<p class="basis-2/3 text-lg text-gray-800">{project.summary}</p>
+			<p class="basis-2/3 text-sm md:text-lg text-gray-800">{project.summary}</p>
 		</div>
 	</div>
 {/if}
