@@ -82,7 +82,7 @@
 <section
 	animate-in
 	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6 }}
-	class="my-24 md:my-48 flex flex-col items-center justify-center text-gray-900"
+	class="my-24 md:my-48 flex flex-col items-center justify-center text-gray-900 select-none"
 >
 	<h1
 		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl"
@@ -176,11 +176,13 @@
 </section>
 
 <section id="projects">
-	<div class="p-6 md:p-12 lg:p-16 space-y-12">
+	<div class="p-6 md:p-12 lg:p-16 space-y-12 md:space-y-16">
 		{#each projects as project}
-			<a href={project.link} target="_blank" class="">
-				<Project {project} />
-			</a>
+			<div class="">
+				<a href={project.link} target="_blank" class="">
+					<Project {project} />
+				</a>
+			</div>
 		{/each}
 	</div>
 </section>
