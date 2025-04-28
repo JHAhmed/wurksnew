@@ -64,12 +64,12 @@
 								animate-in
 								use:animateIn={{ delay: i / 5, blur: 4 }}
 								target="_blank"
-								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-300"
+								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-200"
 								rel="noopener noreferrer"
 							>
 								<Tooltip.Trigger>
-									<div class="flex size-4 items-center justify-center md:size-8">
-										<Icon icon={tech} class="size-6" />
+									<div class="flex size-4 items-center justify-center md:size-8 ">
+										<Icon icon={tech} class="size-6 p-0.5" />
 									</div>
 								</Tooltip.Trigger>
 							</div>

@@ -1,36 +1,34 @@
-<!-- In Cursor.svelte -->
 <script>
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
-	export let isActive = false;
-	export let secondary = false;
-	export let link = false;
+	let { isActive, secondary, link } = $props();
 
-	let x = 0;
-	let y = 0;
-	let targetX = 0;
-	let targetY = 0;
-	let opacity = 0; // Add opacity state
+	let x = $state(0);
+	let y = $state(0);
+	let targetX = $state(0);
+	let targetY = $state(0);
+	let opacity = $state(0); 
 
 	const moveCursor = (e) => {
 		targetX = e.clientX;
 		targetY = e.clientY;
 	};
 
-	// Update opacity based on isActive
-	$: {
+	$effect(() => {
 		if (isActive) {
 			setTimeout(() => opacity = 1, 10); // Short delay before showing
 		} else {
 			opacity = 0;
 		}
-	}
+	});
 
 	onMount(() => {
 		const animate = () => {
 			// Restore easing for smoother movement
-			x += (targetX - x) * 0.15;
-			y += (targetY - y) * 0.15;
+			// x += (targetX - x) * 0.15;
+			// y += (targetY - y) * 0.15;
+			x += (targetX - x);
+			y += (targetY - y);
 			requestAnimationFrame(animate);
 		};
 		animate();

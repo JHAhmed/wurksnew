@@ -16,7 +16,7 @@
 		{
 			emoji: '🛠️',
 			title: '5+ years of hands-on experience',
-			text: 'From agile startups to established brands, we\'ve delivered high-impact design and web solutions.'
+			text: "From agile startups to established brands, we've delivered high-impact design and web solutions."
 		},
 		{
 			emoji: '📈',
@@ -31,9 +31,9 @@
 		{
 			emoji: '🤝',
 			title: 'Transparent, milestone-based work',
-			text: 'We break down work into clear milestones — so you always know what\'s next and what to expect.'
+			text: "We break down work into clear milestones — so you always know what's next and what to expect."
 		}
-	]
+	];
 
 	onMount(() => {
 		if (browser) {
@@ -67,6 +67,12 @@
 			});
 		}
 	});
+
+	function smoothScroll() {
+		if (browser) {
+			document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
 <svelte:head>
@@ -82,7 +88,7 @@
 <section
 	animate-in
 	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6 }}
-	class="my-24 md:my-48 flex flex-col items-center justify-center text-gray-900 select-none"
+	class="my-24 flex flex-col items-center justify-center text-gray-900 select-none md:my-48"
 >
 	<h1
 		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl"
@@ -103,10 +109,8 @@
 		<span class="text-primary agency inline-flex"> agency </span>
 	</h1>
 
-	<h1
-		class="relative  mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl"
-	>
-		redefining <span class="inline-flex mx-2 md:mx-3 font-normal italic">
+	<h1 class="relative mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl">
+		redefining <span class="mx-2 inline-flex font-normal italic md:mx-3">
 			<TextScramble text="digital" duration={2.8} speed={0.06} />
 		</span> Solutions
 	</h1>
@@ -137,16 +141,19 @@
 </section>
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
-	<a
-		href="#projects"
-		class="relative container mx-auto cursor-none divide-y divide-gray-300 text-gray-800"
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<div
+		onclick={smoothScroll}
+		class="relative mx-auto cursor-none divide-y divide-gray-300 text-gray-800"
 		onmouseenter={() => (isActive = true)}
 		onmouseleave={() => (isActive = false)}
 	>
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16">
+			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
+		>
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
 			<div
 				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
@@ -161,7 +168,8 @@
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16">
+			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
+		>
 			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
 			<div
 				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
@@ -172,11 +180,11 @@
 				<p>Custom API integrations</p>
 			</div>
 		</div>
-	</a>
+	</div>
 </section>
 
 <section id="projects">
-	<div class="p-6 md:p-12 lg:p-16 space-y-12 md:space-y-16">
+	<div class="space-y-12 p-6 md:space-y-16 md:p-12 lg:p-16">
 		{#each projects as project}
 			<div class="">
 				<a href={project.link} target="_blank" class="">
@@ -189,35 +197,38 @@
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="container mx-auto grid grid-cols-1 gap-8 lg:divide-x divide-gray-300 text-gray-800 md:grid-cols-2 lg:grid-cols-4"
+		class="container mx-auto grid grid-cols-1 gap-8 divide-gray-300 text-gray-800 md:grid-cols-2 lg:grid-cols-4 lg:divide-x"
 	>
-
 		{#each facts as fact, i}
 			<div
 				animate-in
 				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.5 }}
-				class="flex flex-col items-start space-y-4 md:space-y-8 p-6 md:p-8 border-b md:border-none"
+				class="flex flex-col items-start space-y-4 border-b p-6 md:space-y-8 md:border-none md:p-8"
 			>
 				<div class="text-2xl">{fact.emoji}</div>
-				<h3 class="text-lg md:text-2xl font-medium">{fact.title}</h3>
-				<p class="text-sm md:text-lg text-gray-600">{fact.text}</p>
+				<h3 class="text-lg font-medium md:text-2xl">{fact.title}</h3>
+				<p class="text-sm text-gray-600 md:text-lg">{fact.text}</p>
 			</div>
 		{/each}
 	</div>
 </section>
 
-<section class="mx-auto flex flex-col max-w-7xl items-center justify-center space-y-12 p-12 md:p-24 lg:p-32">
+<section
+	class="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-12 p-12 md:p-24 lg:p-32"
+>
 	<p
 		animate-in
 		use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
-	class="text-lg font-normal tracking-tight text-gray-900 md:text-2xl lg:text-4xl">
-		We don't believe in wasting time.  Let's be real - if you aren't convinced yet, there's not much we can do to convince you.
-
+		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl"
+	>
+		We don't believe in wasting time. Let's be real - if you aren't convinced yet, there's not much
+		we can do to convince you.
 	</p>
 	<p
 		animate-in
 		use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
-	class="text-lg font-normal tracking-tight text-gray-900 md:text-2xl lg:text-4xl">
+		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl"
+	>
 		But if you think <span class="text-primary">Wurks Studio</span> is the right agency to design for
 		you, reach out to us right now!
 	</p>
