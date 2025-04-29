@@ -50,6 +50,7 @@
 				src={project.image.fields.file.url}
 				class="aspect-video rounded-xl object-cover"
 				alt={project.name}
+				loading="lazy"
 			/>
 			<div
 				onmouseenter={() => (isActive = false)}

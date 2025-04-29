@@ -2,8 +2,12 @@
 	import '../app.css';
 	import { Navbar, Footer } from '$shared';
 	import { page } from '$app/stores';
+	import { UmamiAnalytics } from '@lukulent/svelte-umami';
+
 	let { children } = $props();
 </script>
+
+
 
 <svelte:head>
 	<title>Wurks Studio</title>
@@ -11,8 +15,10 @@
 		name="description"
 		content="A creative studio focused on minimalistic web design and development."
 	/>
-	<script defer src="https://cloud.umami.is/script.js" data-website-id="cd63bfd5-f4d1-4098-9de6-3167c99958d3"></script>
+	<!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="cd63bfd5-f4d1-4098-9de6-3167c99958d3"></script> -->
 </svelte:head>
+
+<UmamiAnalytics websiteID="cd63bfd5-f4d1-4098-9de6-3167c99958d3" srcURL="https://cloud.umami.is/script.js" />
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	<filter id="noise">

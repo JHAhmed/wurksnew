@@ -1,5 +1,4 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701&f[]=zodiak@100,101,300,301,400,401,700,701&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701&display=swap');
 @import 'tailwindcss';
 /* @plugin '@tailwindcss/forms'; */
 @plugin '@tailwindcss/typography';
@@ -7,12 +6,8 @@
 
 @theme {
     --font-sans: "Satoshi", "sans-serif";
-    --font-serif: "Zodiak", "serif";
-    --font-mono: "Roboto Mono", "monospace";
-    --font-handwritten: "Caveat", "cursive";
     --color-primary: #5809fc;
     --color-secondary: #e1ff00;
-
     --animate-spin: spin 4s linear infinite;
 }
 
