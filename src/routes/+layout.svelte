@@ -7,8 +7,6 @@
 	let { children } = $props();
 </script>
 
-
-
 <svelte:head>
 	<title>Wurks Studio</title>
 	<meta

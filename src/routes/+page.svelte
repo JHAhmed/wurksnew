@@ -170,7 +170,7 @@
 	>
 		<div
 			animate-in
-			use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
+			use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
@@ -186,7 +186,7 @@
 
 		<div
 			animate-in
-			use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
+			use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
 			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
