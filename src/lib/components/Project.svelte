@@ -49,7 +49,7 @@
 			<img
 				src={project.image.fields.file.url}
 				class="aspect-video rounded-xl object-cover"
-				alt={project.name}
+				alt={project.title}
 				loading="lazy"
 			/>
 			<div
@@ -68,7 +68,7 @@
 								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-200 "
 								rel="noopener noreferrer"
 							>
-								<Tooltip.Trigger>
+								<Tooltip.Trigger name={`${mapTooltip(tech)} icon`}>
 									<div class="flex size-4 items-center justify-center md:size-8 ">
 										<Icon icon={tech} class="size-6 p-0.5" />
 									</div>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		<div class="flex justify-between py-4">
-			<h6 class="basis-1/3 text-lg font-medium md:text-2xl">{project.title}</h6>
+			<h4 class="basis-1/3 text-lg font-medium md:text-2xl">{project.title}</h4>
 
 			<p class="basis-2/3 text-sm text-gray-800 md:text-lg">{project.summary}</p>
 		</div>

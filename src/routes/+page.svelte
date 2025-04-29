@@ -95,7 +95,7 @@
 	<link rel="canonical" href="https://wurks.studio/" />
 	<meta property="og:title" content="Wurks Studio" />
 	<meta property="og:description" content="A creative studio focused on minimalistic web design and development." />
-	<meta property="og:image" content="/ogimage.png" />
+	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Wurks Studio" />
 	<meta property="og:url" content="https://wurks.studio/" />

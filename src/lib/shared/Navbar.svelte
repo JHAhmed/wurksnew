@@ -19,14 +19,15 @@
 </script>
 
 <nav
-	class="fixed inset-x-0 top-8 z-10 mx-auto scale-90 md:scale-100 flex w-fit items-center justify-center space-x-2 rounded-full bg-white/50 p-2 shadow-md/5 backdrop-blur-md"
+	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit scale-90 items-center justify-center space-x-2 rounded-full bg-white/50 p-2 shadow-md/5 backdrop-blur-md md:scale-100"
 >
 	<a
-	href="/"
+		href="/"
+		aria-label="Return to home"
 		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
 	>
 		<span class="flex items-center justify-center px-4 py-2 text-white">
-			<img src={Logo} class="h-4 md:h-6 invert" alt="" />
+			<img src={Logo} class="h-4 invert md:h-6" alt="" />
 		</span>
 	</a>
 
@@ -34,7 +35,7 @@
 		href="/contact"
 		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
 	>
-		<span class="flex items-center justify-center px-2 md:px-4 py-1 md:py-2 text-white">
+		<span class="flex items-center justify-center px-2 py-1 text-white md:px-4 md:py-2">
 			<p>Contact</p>
 			<Icon icon="heroicons:arrow-right" class="ml-3 size-6 rounded-full bg-white p-1 text-black" />
 		</span>
