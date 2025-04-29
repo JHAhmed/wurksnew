@@ -16,27 +16,28 @@ export function animateIn(element, args = {}) {
 
 	const finalArgs = { ...defaults, ...args };
 
-	inView(element, (element) => {
-		animate(
-			element,
-			{
-				opacity: [0, 1],
-				scale: [finalArgs.scale, 1],
-				x: [finalArgs.x, 0],
-				y: [finalArgs.y, 0],
-				rotate: [finalArgs.rotate, 0],
-				filter: [`blur(${finalArgs.blur}px)`, 'blur(0px)']
-			},
-			{
-				duration: finalArgs.duration,
-				delay: finalArgs.delay
-			}
-		);
-	},
-	{
-		once: true,
-		amount: finalArgs.onView,
-	}
-		
-);
+	inView(
+		element,
+		(element) => {
+			animate(
+				element,
+				{
+					opacity: [0, 1],
+					scale: [finalArgs.scale, 1],
+					x: [finalArgs.x, 0],
+					y: [finalArgs.y, 0],
+					rotate: [finalArgs.rotate, 0],
+					filter: [`blur(${finalArgs.blur}px)`, 'blur(0px)']
+				},
+				{
+					duration: finalArgs.duration,
+					delay: finalArgs.delay
+				}
+			);
+		},
+		{
+			once: true,
+			amount: finalArgs.onView
+		}
+	);
 }

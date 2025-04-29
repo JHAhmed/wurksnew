@@ -55,7 +55,7 @@
 				onmouseenter={() => (isActive = false)}
 				onmouseleave={() => (isActive = true)}
 				role="region"
-				class="absolute bottom-3 left-3 flex rounded-full bg-white px-4 py-2 text-black"
+				class="absolute bottom-3 left-3 flex rounded-full bg-white px-4 py-2 text-black shadow-sm/10"
 			>
 				{#each project.technologies as tech, i}
 					<Tooltip.Provider>
@@ -64,7 +64,7 @@
 								animate-in
 								use:animateIn={{ delay: i / 5, blur: 4 }}
 								target="_blank"
-								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-200"
+								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-200 "
 								rel="noopener noreferrer"
 							>
 								<Tooltip.Trigger>

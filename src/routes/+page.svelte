@@ -81,6 +81,23 @@
 		name="description"
 		content="A creative studio focused on minimalistic web design and development based in Chennai, India."
 	/>
+	<meta name="robots" content="index, follow" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+			"name": "Daystar Solar",
+			"url": "https://wurks.studio"
+		}
+	</script>
+
+	<link rel="canonical" href="https://wurks.studio/" />
+	<meta property="og:title" content="Wurks Studio" />
+	<meta property="og:description" content="A creative studio focused on minimalistic web design and development." />
+	<meta property="og:image" content="/ogimage.jpg" />
+	<meta property="og:url" content="https://wurks.studio/" />
+
 </svelte:head>
 
 <Cursor {isActive} />
@@ -197,13 +214,13 @@
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="container mx-auto grid grid-cols-1 gap-8 divide-gray-300 text-gray-800 md:grid-cols-2 lg:grid-cols-4 lg:divide-x"
+		class="container mx-auto grid grid-cols-1 gap-8 lg:divide-gray-300 text-gray-800 md:grid-cols-2 lg:grid-cols-4 lg:divide-x-2"
 	>
 		{#each facts as fact, i}
 			<div
 				animate-in
 				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.5 }}
-				class="flex flex-col items-start space-y-4 border-b p-6 md:space-y-8 md:border-none md:p-8"
+				class="flex flex-col items-start space-y-4 border-b p-6 md:space-y-8 md:border-b-0 md:p-8"
 			>
 				<div class="text-2xl">{fact.emoji}</div>
 				<h3 class="text-lg font-medium md:text-2xl">{fact.title}</h3>
