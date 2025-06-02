@@ -5,6 +5,8 @@
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 
 	let { children } = $props();
+
+	console.log($page.url.pathname);
 </script>
 
 <svelte:head>
@@ -13,10 +15,29 @@
 		name="description"
 		content="A creative studio focused on minimalistic web design and development."
 	/>
+
+	<script type="text/javascript">
+		(function (c, l, a, r, i, t, y) {
+			c[a] =
+				c[a] ||
+				function () {
+					(c[a].q = c[a].q || []).push(arguments);
+				};
+			t = l.createElement(r);
+			t.async = 1;
+			t.src = 'https://www.clarity.ms/tag/' + i;
+			y = l.getElementsByTagName(r)[0];
+			y.parentNode.insertBefore(t, y);
+		})(window, document, 'clarity', 'script', 'rq6kgdcekm');
+	</script>
+
 	<!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="cd63bfd5-f4d1-4098-9de6-3167c99958d3"></script> -->
 </svelte:head>
 
-<UmamiAnalytics websiteID="cd63bfd5-f4d1-4098-9de6-3167c99958d3" srcURL="https://cloud.umami.is/script.js" />
+<UmamiAnalytics
+	websiteID="cd63bfd5-f4d1-4098-9de6-3167c99958d3"
+	srcURL="https://cloud.umami.is/script.js"
+/>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	<filter id="noise">
@@ -32,12 +53,16 @@
 	<div class="z-20 flex min-h-screen flex-col items-center justify-center bg-gray-50">
 		<div class="z-30 py-12">
 			{#key $page.url.pathname}
-				<Navbar />
+				{#if $page.url.pathname !== '/form'}
+					<Navbar />
+				{:else}
+					<div class="h-16"></div>
+				{/if}
 			{/key}
 		</div>
 		{@render children()}
 	</div>
-	<div class="p-4 md:p-8 ">
+	<div class="p-4 md:p-8">
 		<Footer />
 	</div>
 </div>
