@@ -34,15 +34,18 @@
 		property="og:description"
 		content="Enquiry form for Wurks Studio, a creative studio focused on minimalistic web design and development."
 	/>
-	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
+	<meta property="og:image" content="https://wurks.studio/ogimage-form.png" />
 </svelte:head>
 
-<iframe
-	data-tally-src="https://tally.so/r/n0y06j?transparentBackground=1"
-	width="100%"
-	height="100%"
-	frameborder="0"
-	marginheight="0"
-	marginwidth="0"
-	title="Wurks Studio - Enquiry"
-></iframe>
+<div class="p-12">
+	<iframe
+		class="z-50"
+		data-tally-src="https://tally.so/r/n0y06j?transparentBackground=1"
+		width="100%"
+		height="100%"
+		frameborder="0"
+		marginheight="0"
+		marginwidth="0"
+		title="Wurks Studio - Enquiry"
+	></iframe>
+</div>
