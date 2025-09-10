@@ -51,7 +51,7 @@
 			<img
 				src={project.image.fields.file.url}
 				class="aspect-video rounded-xl object-cover"
-				alt={project.title}
+				alt="Minimalist website design for {project.title}"
 				loading="lazy"
 			/>
 			<div

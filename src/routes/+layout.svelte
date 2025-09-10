@@ -10,10 +10,10 @@
 </script>
 
 <svelte:head>
-	<title>Wurks Studio</title>
+	<title>Wurks Studio | Minimalist Web Design & Development in Chennai</title>
 	<meta
 		name="description"
-		content="A creative studio focused on minimalistic web design and development."
+		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation."
 	/>
 
 	<script type="text/javascript">

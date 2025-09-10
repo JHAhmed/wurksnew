@@ -76,20 +76,45 @@
 </script>
 
 <svelte:head>
-	<title>Wurks Studio</title>
+	<title>Wurks Studio | Minimalist Web Design & Development in Chennai</title>
 	<meta
 		name="description"
-		content="A creative studio based in Chennai focused on modern minimalistic web design and development."
+		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation."
 	/>
 	<meta name="robots" content="index, follow" />
 
 	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "WebSite",
-			"name": "Wurks Studio",
-			"url": "https://wurks.studio"
+	{
+		"@context": "https://schema.org",
+		"@type": "ProfessionalService",
+		"name": "Wurks Studio",
+		"image": "https://wurks.studio/ogimage.png",
+		"@id": "https://wurks.studio/",
+		"url": "https://wurks.studio/",
+		"telephone": "+91 93452 11256", 
+		"priceRange": "$$", 
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Jamalia, Perambur High Road",
+			"addressLocality": "Chennai",
+			"postalCode": "600012",
+			"addressRegion": "TN",
+			"addressCountry": "IN"
+		},
+		"description": "A creative studio based in Chennai focused on modern minimalistic web design and development.",
+		"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday"
+			],
+			"opens": "09:00",
+			"closes": "18:00"
 		}
+	}
 	</script>
 
 	<link rel="canonical" href="https://wurks.studio/" />
@@ -107,9 +132,12 @@
 <section
 	animate-in
 	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6 }}
-	class="my-24 flex flex-col items-center justify-center text-gray-900 select-none md:my-48"
+	class="my-24 flex flex-col items-center justify-center text-gray-900 select-none md:my-36"
 >
-	<h1
+
+	<h1 class="uppercase tracking-[0.1em] font-medium text-gray-600 text-sm mb-12">Minimalistic Web Design & Development</h1>
+
+	<h2
 		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl"
 	>
 		The
@@ -126,7 +154,7 @@
 		/>
 
 		<span class="text-primary agency inline-flex"> agency </span>
-	</h1>
+	</h2>
 
 	<h1 class="relative mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl">
 		redefining <span class="mx-2 inline-flex font-normal italic md:mx-3">
@@ -137,7 +165,7 @@
 	<div
 		animate-in
 		use:animateIn={{ delay: 0.8, y: 10, blur: 2 }}
-		class="flex w-full flex-col space-y-4 p-4 text-left sm:p-6 md:text-center"
+		class="flex w-full flex-col space-y-4 p-4 mt-8 text-left sm:p-6 md:text-center"
 	>
 		<div class="mx-auto w-full max-w-7xl space-y-8">
 			<p
