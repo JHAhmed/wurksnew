@@ -26,6 +26,8 @@
 				return 'Discord';
 			case 'resend':
 				return 'Resend';
+			case 'appwrite':
+				return 'Appwrite';
 			default:
 				return 'JavaScript';
 		}

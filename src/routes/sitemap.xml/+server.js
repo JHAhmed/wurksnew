@@ -2,8 +2,8 @@
 // import { fetchBlogPosts } from '$lib/server/database'; // Example function to get posts
 
 export async function GET({ url }) {
-	const lastmod = '2025-04-28';
-	const staticPages = ['/', '/contact']; // Your static pages
+	const lastmod = '2025-09-10';
+	const staticPages = ['/', '/contact', '/form']; // Your static pages
 	// const posts = await fetchBlogPosts(); // Fetch dynamic content
 
 	let xml = '<?xml version="1.0" encoding="UTF-8"?>';

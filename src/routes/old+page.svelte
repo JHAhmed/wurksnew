@@ -67,7 +67,7 @@
 	<title>Wurks Studio</title>
 	<meta
 		name="description"
-		content="A creative studio focused on minimalistic web design and development."
+		content="A creative studio based in Chennai focused on modern minimalistic web design and development."
 	/>
 </svelte:head>
 

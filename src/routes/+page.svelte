@@ -79,7 +79,7 @@
 	<title>Wurks Studio</title>
 	<meta
 		name="description"
-		content="A creative studio focused on minimalistic web design and development based in Chennai, India."
+		content="A creative studio based in Chennai focused on modern minimalistic web design and development."
 	/>
 	<meta name="robots" content="index, follow" />
 
@@ -94,7 +94,7 @@
 
 	<link rel="canonical" href="https://wurks.studio/" />
 	<meta property="og:title" content="Wurks Studio" />
-	<meta property="og:description" content="A creative studio focused on minimalistic web design and development." />
+	<meta property="og:description" content="A creative studio based in Chennai focused on modern minimalistic web design and development." />
 	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Wurks Studio" />
@@ -170,7 +170,7 @@
 	>
 		<div
 			animate-in
-			use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
+			use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
@@ -221,7 +221,7 @@
 		{#each facts as fact, i}
 			<div
 				animate-in
-				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.5 }}
+				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
 				class="flex flex-col items-start space-y-4 border-b p-6 md:space-y-8 md:border-b-0 md:p-8"
 			>
 				<div class="text-2xl">{fact.emoji}</div>
