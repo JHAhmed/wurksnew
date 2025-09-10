@@ -63,6 +63,10 @@
 		{@render children()}
 	</div>
 	<div class="p-4 md:p-8">
-		<Footer />
+		{#if $page.url.pathname !== '/form'}
+			<Footer />
+		{:else}
+			<div class="h-4"></div>
+		{/if}
 	</div>
 </div>

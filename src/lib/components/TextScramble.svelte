@@ -5,7 +5,7 @@
 	export let duration = 0.8;
 	export let speed = 0.04;
 	export let characterSet =
-		'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 	export let className = undefined;
 	export let trigger = true;
     export let onScrambleComplete = undefined;

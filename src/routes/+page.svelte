@@ -21,7 +21,7 @@
 		{
 			emoji: '📈',
 			title: 'Deep, client-focused project cycles',
-			text: 'Our projects typically run 6–12 weeks to ensure a deep understanding and a perfect-fit final product.'
+			text: 'Our projects typically run 6 - 12 weeks to ensure a deep understanding and a perfect-fit final product.'
 		},
 		{
 			emoji: '🧠',
@@ -31,7 +31,7 @@
 		{
 			emoji: '🤝',
 			title: 'Transparent, milestone-based work',
-			text: "We break down work into clear milestones — so you always know what's next and what to expect."
+			text: "We break down work into clear milestones - so you always know what's next and what to expect."
 		}
 	];
 
@@ -156,7 +156,7 @@
 	</h2>
 
 	<h1 class="relative mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl">
-		redefining <span class="mx-2 inline-flex font-normal italic md:mx-3">
+		redefining <span class="mx-1 inline-flex font-normal italic md:mx-3">
 			<TextScramble text="digital" duration={2.8} speed={0.06} />
 		</span> Solutions
 	</h1>
