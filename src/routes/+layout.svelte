@@ -6,7 +6,7 @@
 
 	let { children } = $props();
 
-	console.log($page.url.pathname);
+	// console.log($page.url.pathname);
 </script>
 
 <svelte:head>

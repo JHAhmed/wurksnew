@@ -84,58 +84,57 @@
 	<meta name="robots" content="index, follow" />
 
 	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "ProfessionalService",
-		"name": "Wurks Studio",
-		"image": "https://wurks.studio/ogimage.png",
-		"@id": "https://wurks.studio/",
-		"url": "https://wurks.studio/",
-		"telephone": "+91 93452 11256", 
-		"priceRange": "$$", 
-		"address": {
-			"@type": "PostalAddress",
-			"streetAddress": "Jamalia, Perambur High Road",
-			"addressLocality": "Chennai",
-			"postalCode": "600012",
-			"addressRegion": "TN",
-			"addressCountry": "IN"
-		},
-		"description": "A creative studio based in Chennai focused on modern minimalistic web design and development.",
-		"openingHoursSpecification": {
-			"@type": "OpeningHoursSpecification",
-			"dayOfWeek": [
-				"Monday",
-				"Tuesday",
-				"Wednesday",
-				"Thursday",
-				"Friday"
-			],
-			"opens": "09:00",
-			"closes": "18:00"
+		{
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Wurks Studio",
+			"image": "https://wurks.studio/ogimage.png",
+			"@id": "https://wurks.studio/",
+			"url": "https://wurks.studio/",
+			"telephone": "+91 93452 11256",
+			"priceRange": "$$",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Jamalia, Perambur High Road",
+				"addressLocality": "Chennai",
+				"postalCode": "600012",
+				"addressRegion": "TN",
+				"addressCountry": "IN"
+			},
+			"description": "A creative studio based in Chennai focused on modern minimalistic web design and development.",
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+				"opens": "09:00",
+				"closes": "18:00"
+			}
 		}
-	}
 	</script>
 
 	<link rel="canonical" href="https://wurks.studio/" />
 	<meta property="og:title" content="Wurks Studio" />
-	<meta property="og:description" content="A creative studio based in Chennai focused on modern minimalistic web design and development." />
+	<meta
+		property="og:description"
+		content="A creative studio based in Chennai focused on modern minimalistic web design and development."
+	/>
 	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Wurks Studio" />
 	<meta property="og:url" content="https://wurks.studio/" />
-
 </svelte:head>
 
 <Cursor {isActive} />
 
 <section
 	animate-in
-	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6 }}
-	class="my-24 flex flex-col items-center justify-center text-gray-900 select-none md:my-36"
+	use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }}
+	class="my-16 flex flex-col items-center justify-center text-gray-900 select-none sm:my-24 md:my-36"
 >
-
-	<h1 class="uppercase tracking-[0.1em] font-medium text-gray-600 text-sm mb-12">Minimalistic Web Design & Development</h1>
+	<h1
+		class="mb-8 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:mb-12"
+	>
+		Minimalistic Web Design & Development
+	</h1>
 
 	<h2
 		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl"
@@ -165,7 +164,7 @@
 	<div
 		animate-in
 		use:animateIn={{ delay: 0.8, y: 10, blur: 2 }}
-		class="flex w-full flex-col space-y-4 p-4 mt-8 text-left sm:p-6 md:text-center"
+		class="mt-4 flex w-full flex-col space-y-4 p-4 text-left sm:p-6 md:mt-8 md:text-center"
 	>
 		<div class="mx-auto w-full max-w-7xl space-y-8">
 			<p
@@ -198,7 +197,7 @@
 	>
 		<div
 			animate-in
-			use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0 }}
+			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
@@ -214,7 +213,7 @@
 
 		<div
 			animate-in
-			use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0.8 }}
+			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.8 }}
 			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
 			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
@@ -244,7 +243,7 @@
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="container mx-auto grid grid-cols-1 gap-8 lg:divide-gray-300 text-gray-800 md:grid-cols-2 lg:grid-cols-4 lg:divide-x-2"
+		class="container mx-auto grid grid-cols-1 gap-8 text-gray-800 md:grid-cols-2 lg:grid-cols-4 lg:divide-x-2 lg:divide-gray-300"
 	>
 		{#each facts as fact, i}
 			<div
@@ -265,7 +264,7 @@
 >
 	<p
 		animate-in
-		use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
+		use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.3 }}
 		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl"
 	>
 		We don't believe in wasting time. Let's be real - if you aren't convinced yet, there's not much
@@ -273,7 +272,7 @@
 	</p>
 	<p
 		animate-in
-		use:animateIn={{ delay: 0.6, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
+		use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5, onView: 0.3 }}
 		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl"
 	>
 		But if you think <span class="text-primary">Wurks Studio</span> is the right agency to design for

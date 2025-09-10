@@ -24,10 +24,10 @@
 	<a
 		href="/"
 		aria-label="Return to home"
-		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
+		class="bg-primary flex flex-shrink-0 cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
 	>
-		<span class="flex items-center justify-center px-4 py-2 text-white">
-			<img src={Logo} class="h-4 invert md:h-6" alt="" />
+		<span class="flex items-center justify-center px-4 py-3 text-white">
+			<img src={Logo} class="h-3 sm:h-4 invert md:h-6" alt="" />
 		</span>
 	</a>
 
@@ -37,7 +37,7 @@
 		href="/contact"
 		class="bg-none text-black hover:bg-primary hover:text-white flex cursor-pointer items-center justify-center transition-all duration-200 rounded-full px-3 py-2 shadow-lg"
 	>
-		<span class="flex items-center justify-center px-2 py-1 md:px-4 md:py-2">
+		<span class="flex items-center justify-center p-1 sm:px-2 sm:py-1 md:px-4 md:py-2">
 			<p class="font-medium tracking-tight">Contact</p>
 			<!-- <Icon icon="heroicons:arrow-right" class="ml-3 size-6 rounded-full bg-white p-1 text-black" /> -->
 		</span>
@@ -47,7 +47,7 @@
 		href="/form"
 		class="bg-none text-black hover:bg-primary hover:text-white flex cursor-pointer items-center justify-center transition-all duration-200 rounded-full px-3 py-2 shadow-lg"
 	>
-		<span class="flex items-center justify-center px-2 py-1 md:px-4 md:py-2">
+		<span class="flex items-center justify-center p-1 sm:px-2 sm:py-1 md:px-4 md:py-2">
 			<p class="font-medium tracking-tight">Enquiry</p>
 			<!-- <Icon icon="heroicons:information-circle" class="ml-3 size-6 rounded-full bg-white p-1 text-black" /> -->
 		</span>
