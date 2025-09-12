@@ -89,7 +89,7 @@
 			</div>
 		</div>
 		<div class="flex justify-between py-4">
-			<h4 class="basis-1/3 text-lg font-medium md:text-2xl">{project.title}</h4>
+			<h4 class="basis-1/3 tracking-tight text-lg font-medium md:text-2xl">{project.title}</h4>
 
 			<p class="basis-2/3 text-sm text-gray-800 md:text-lg">{project.summary}</p>
 		</div>

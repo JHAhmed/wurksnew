@@ -8,37 +8,11 @@
 	import { animate } from 'animejs';
 	import SplitType from 'split-type';
 	import { blur } from 'svelte/transition';
-
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import { SplitText } from 'gsap/SplitText';
-
-	let { data } = $props();
-	let projects = data.projects;
+	import { steps } from 'motion';
 
 	let isActive = $state(false);
-	let blurTestimonial = $state(-1);
-	let hoverTestimonial = $state(false);
-
-    let boxesContainer;
-
-	let testimonials = [
-		{
-			quote: "Wurks Studio genuinely has some of the most innovative design work I've seen. They excel in outputting stunning, high-quality, and high-performance websites.",
-			name: 'Shivani I.',
-			company: 'CloudCam App',
-		},
-		{
-			quote: "Peak design. Peak vibes. And peak development. Wurks makes minimalism and modern design look effortless, and honestly? It just works.",
-			name: 'Abdul M.',
-			company: 'Baseline Studio, Chennai',
-		},
-		{
-			quote: 'Wurks Studio turned our half-baked ideas into a site that looks great and actually works. Clear timelines, solid communication, and zero stress. Would recommend.',
-			name: 'Anonymous',
-			company: ' ',
-		},
-	]
+	let { data } = $props();
+	let projects = data.projects;
 
 	let stats = [
 		{
@@ -106,86 +80,7 @@
 
 	onMount(() => {
 		if (browser) {
-
-            // GSAP Animations
-            gsap.registerPlugin(ScrollTrigger);
-            gsap.registerPlugin(SplitText);
-            // const ctx = gsap.context((self) => {
-            //     const boxes = self.selector(".box");
-
-            //     // Animate all boxes with a single GSAP call
-            //     gsap.to(boxes, {
-            //         opacity: 1,
-            //         // Add the stagger property,
-            //         stagger: 0.1, // This will add a 0.1-second delay between the start of each box's animation
-            //         scrollTrigger: {
-            //             trigger: boxesContainer, // Use the main container as the trigger for the whole batch
-            //             start: "top 75%", // Start when the top of the container is 75% down the viewport
-            //             end: "bottom 50%", // End when the bottom of the container is at the middle of the viewport
-            //             scrub: true,
-            //         },
-            //     });
-            // }, boxesContainer);
-
-
-            const ctx = gsap.context((self) => {
-                const boxes = self.selector(".box");
-
-                // Use gsap.from() to animate FROM these values to the default CSS state
-                gsap.from(boxes, {
-                    opacity: 0,
-                    y: 20, // Start 20 pixels down
-                    rotation: -2, // Start rotated -5 degrees
-                    filter: 'blur(5px)', // Start with a 5px blur
-                    stagger: 0.7,
-                    duration: 1, // Give the animation a duration to control its speed within the scrub
-                    scrollTrigger: {
-                        trigger: boxesContainer,
-                        start: "top 90%", // Start when the top of the container is 90% down the viewport
-                        end: "bottom 60%", // End when the bottom of the container is at the middle of the viewport
-                        scrub: 1, // Using a number for a smoother scrub effect
-                    },
-                });
-            }, boxesContainer);
-
-            const tagline = SplitText.create('.tagline', { type: 'words' });
-
-            gsap.from(tagline.words, {
-                y: 8,
-                opacity: 0.1,
-                filter: 'blur(2px)', 
-                stagger: 0.7,
-                duration: 2,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: '.tagline',
-                    start: 'top 90%',
-                    end: 'bottom 40%',
-                    scrub: 1
-                }
-            });
-
-            const philosophy = SplitText.create('.philosophy', { type: 'words' });
-            gsap.from(philosophy.words, {
-                y: 8,
-                // opacity: 0.6,
-                opacity: 0,
-                filter: 'blur(2px)', 
-                stagger: 0.3,
-                duration: 2,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: '.philosophy',
-                    start: 'top 90%',
-                    end: 'bottom 50%',
-                    scrub: 1
-                }
-            });
-
-            // AnimeJS Animations
-            let currentWidth = document.querySelector('.expanding').offsetWidth;
-            const agencyText = new SplitType('.agency');
-
+			let currentWidth = document.querySelector('.expanding').offsetWidth;
 			animate('.expanding', {
 				width: [
 					{ to: `${currentWidth}px`, ease: 'inOutExpo', duration: 600 },
@@ -199,6 +94,8 @@
 				loop: true
 			});
 
+			const agencyText = new SplitType('.agency');
+
 			animate(agencyText.chars, {
 				y: [
 					{ to: '-2rem', ease: 'inOutExpo', duration: 600 },
@@ -209,8 +106,6 @@
 				loopDelay: 500,
 				loop: true
 			});
-
-            return () => ctx.revert(); // <- Cleanup!
 		}
 	});
 
@@ -220,7 +115,8 @@
 		}
 	}
 
-
+	let blurTestimonial = $state(-1);
+	let hoverTestimonial = $state(false);
 </script>
 
 <svelte:head>
@@ -337,9 +233,9 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	<div
 		onmouseenter={() => (hoverTestimonial = true)}
 		onmouseleave={() => (hoverTestimonial = false)}
-		class="max-w-9xl z-5 mt-12 grid w-full grid-cols-1 gap-4 px-8 md:grid-cols-3"
+		class="max-w-9xl z-50 mt-12 grid w-full grid-cols-1 gap-4 px-8 md:grid-cols-3"
 	>
-		{#each testimonials as { quote, name, company }, i}
+		{#each Array(3) as _, i}
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<div
 				onmouseenter={() => (blurTestimonial = i)}
@@ -349,75 +245,13 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 					? 'border-gray-300/100 bg-white/20'
 					: ''} rounded-xl border border-gray-300/0 p-2 transition-all duration-250"
 			>
-				<Testimonial {quote} {name} {company} />
+				<Testimonial />
 			</div>
 		{/each}
 	</div>
 </section>
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
-
-	<div class="relative mx-auto flex-col text-gray-800 flex items-center justify-center p-16">
-
-	<p
-        use:animateIn={{ delay: 0.2, y: 4, duration: 0.5, onView: 0.2 }}
-		class="mb-4 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:mb-8 md:w-full"
-	>
-		Our Philosophy
-	</p>
-
-        <h3 class="text-3xl tracking-tight font-medium w-2/3 leading-16 philosophy md:text-4xl lg:text-5xl">
-            We craft digital experiences that feel <span class="italic text-gray-600">effortless</span> and look exceptional, combining design-forward thinking with robust engineering to build websites that truly perform.
-        </h3>
-
-	</div>
-</section>
-
-
-<section class="w-full border-b border-gray-300 bg- md:px-8">
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<!-- svelte-ignore a11y_click_events_have_key_events -->
-	<!-- onmouseenter={() => (isActive = true)}
-	onmouseleave={() => (isActive = false)} -->
-	<div onclick={smoothScroll} class="relative mx-auto divide-y divide-gray-300 text-gray-800">
-		<div
-			animate-in
-			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
-		>
-			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
-			<div
-				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
-			>
-				<p>Pixel-perfect UI design</p>
-				<p>UX that actually makes sense</p>
-				<p>Brand-first visual systems</p>
-				<p>Prototyping & microinteractions</p>
-			</div>
-		</div>
-
-		<div
-			animate-in
-			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.8 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
-		>
-			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
-			<div
-				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
-			>
-				<p>Modern, lightweight frontends</p>
-				<p>Fast & scalable backends</p>
-				<p>SEO and performance optimization</p>
-				<p>Custom API integrations</p>
-			</div>
-		</div>
-	</div>
-</section>
-
-
-
-
-<section class="w-full hidden border-y border-gray-300 bg-gray-100 md:px-8">
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- onmouseenter={() => (isActive = true)}
@@ -469,17 +303,44 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
-<section bind:this={boxesContainer} class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
-	<div class="container mx-auto grid grid-cols-1 divide-x  text-gray-800 md:grid-cols-2 lg:grid-cols-4">
-		{#each facts as fact, i}
+<section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
+	<!-- class="container mx-auto grid grid-cols-1 gap-8 text-gray-800 md:grid-cols-2 lg:grid-cols-4 lg:divide-x-2 lg:divide-gray-300" -->
+	<div class="container mx-auto grid grid-cols-1 text-gray-800 md:grid-cols-2 lg:grid-cols-4">
+		<!-- {#each facts as fact, i}
 			<div
-
-				class="flex flex-col items-start space-y-4 box border-gray-300 p-6 transition-colors duration-200 md:space-y-8 md:p-8
-               border-b md:border-b-0"
+				animate-in
+				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
+				class="flex flex-col items-start space-y-4 border-b p-6 md:space-y-8 md:border-b-0 md:p-8"
 			>
+				<div class="text-2xl">{fact.emoji}</div>
+				<h3 class="text-lg font-medium md:text-2xl">{fact.title}</h3>
+				<p class="text-sm text-gray-600 md:text-lg">{fact.text}</p>
+			</div>
+		{/each} -->
+		{#each stats as fact, i}
+			<div
+				animate-in
+				use:animateIn={{ delay: i * 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
+				class="flex flex-col items-start space-y-4 {fact.emoji
+					? 'hover:bg-purple-400/10'
+					: 'hover:bg-gray-800/10 '} border-gray-300 p-6 transition-colors duration-200 md:space-y-8 md:p-8
+               {i % 4 !== 3 ? 'lg:border-r' : ''}
+               {i % 2 !== 1 ? 'md:border-r' : ''}  
+               border-b md:border-b"
+			>
+				{#if fact.emoji}
 					<div class="text-2xl">{fact.emoji}</div>
 					<h3 class="text-lg font-medium md:text-2xl">{fact.title}</h3>
 					<p class="text-sm text-gray-600 md:text-lg">{fact.text}</p>
+				{:else}
+					<div class="group flex h-full w-full flex-col items-center justify-center py-4 md:py-2">
+						<h3 class="text-primary inline-flex text-4xl font-semibold md:text-5xl lg:text-7xl">
+							{fact.title.slice(0, fact.title.length - 1)}
+							<span class="font-medium text-gray-400">{fact.title.slice(-1)}</span>
+						</h3>
+						<p class="text-sm text-gray-600 md:text-lg">{fact.text}</p>
+					</div>
+				{/if}
 			</div>
 		{/each}
 	</div>
@@ -489,16 +350,19 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	class="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-12 p-12 md:p-24 lg:p-32"
 >
 	<p
-		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl tagline"
+		animate-in
+		use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.3 }}
+		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl"
 	>
 		We don't believe in wasting time. Let's be real - if you aren't convinced yet, there's not much
 		we can do to convince you.
 	</p>
 	<p
-		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl tagline"
+		animate-in
+		use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5, onView: 0.3 }}
+		class="text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl"
 	>
 		But if you think <span class="text-primary">Wurks Studio</span> is the right agency to design for
 		you, reach out to us right now!
 	</p>
 </section>
-

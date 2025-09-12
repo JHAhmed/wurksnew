@@ -9,8 +9,30 @@
     --color-primary: #5809fc;
     --color-secondary: #e1ff00;
     --animate-spin: spin 4s linear infinite;
+    --spacing-8xl: 86rem;
+    --spacing-9xl: 94rem;
 }
 
 [animate-in] {
     opacity: 0;
-  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

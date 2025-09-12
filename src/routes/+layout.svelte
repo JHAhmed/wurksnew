@@ -5,6 +5,29 @@
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 
 	let { children } = $props();
+	import Lenis from 'lenis';
+	import { onMount } from 'svelte';
+
+	let lenis;
+
+	onMount(() => {
+		lenis = new Lenis({
+			lerp: 0.1, // Adjust for smoothness (0-1)
+			wheelMultiplier: 1.5, // Adjust scroll speed
+			smoothWheel: true // Enable smooth wheel scrolling
+		});
+
+		// RAF loop for animation
+		function raf(time) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+		requestAnimationFrame(raf);
+
+		return () => {
+			lenis.destroy(); // Clean up on unmount
+		};
+	});
 
 	// console.log($page.url.pathname);
 </script>
