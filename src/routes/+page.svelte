@@ -35,8 +35,8 @@
 		},
 		{
 			quote: 'Wurks Studio turned our half-baked ideas into a site that looks great and actually works. Clear timelines, solid communication, and zero stress. Would recommend.',
-			name: 'Anonymous',
-			company: ' ',
+			name: 'Mansur Ali',
+			company: 'Six Red Marbles',
 		},
 	]
 
@@ -104,29 +104,66 @@
 		}
 	];
 
+
 	onMount(() => {
 		if (browser) {
+
+
+
+
+			
+			// const designSection = document.querySelector('.wwd-design')?.closest('.group');
+			// if (designSection) {
+			// const hoverCard = designSection.querySelector('.hover-card');
+			// let targetX = 0, targetY = 0, vx = 0, vy = 0;
+			// let visible = false;
+
+			// designSection.addEventListener('mouseenter', () => {
+			// 	hoverCard.style.transition = 'opacity 0.3s ease';
+			// 	hoverCard.style.opacity = 1;
+			// 	visible = true;
+			// });
+
+			// designSection.addEventListener('mouseleave', () => {
+			// 	hoverCard.style.transition = 'opacity 0.3s ease';
+			// 	hoverCard.style.opacity = 0;
+			// 	visible = false;
+			// });
+
+			// designSection.addEventListener('mousemove', (e) => {
+			// 	const rect = designSection.getBoundingClientRect();
+			// 	targetX = (e.clientX - rect.left - rect.width / 2) / 6;
+			// 	targetY = (e.clientY - rect.top - rect.height / 2) / 6;
+			// });
+
+			// function animate() {
+			// 	// spring physics: acceleration -> velocity -> position
+			// 	const stiffness = 0.1; // how strong it pulls
+			// 	const damping = 0.8;   // how much it resists motion
+
+			// 	vx += (targetX - vx) * stiffness;
+			// 	vy += (targetY - vy) * stiffness;
+
+			// 	vx *= damping;
+			// 	vy *= damping;
+
+			// 	hoverCard.style.transform = `translate(${vx}px, ${vy}px) rotate(${vx / 10}deg)`;
+
+			// 	requestAnimationFrame(animate);
+			// }
+
+			// animate();
+			// }
+
+
+
+
+
+
 
             // GSAP Animations
             gsap.registerPlugin(ScrollTrigger);
             gsap.registerPlugin(SplitText);
-            // const ctx = gsap.context((self) => {
-            //     const boxes = self.selector(".box");
-
-            //     // Animate all boxes with a single GSAP call
-            //     gsap.to(boxes, {
-            //         opacity: 1,
-            //         // Add the stagger property,
-            //         stagger: 0.1, // This will add a 0.1-second delay between the start of each box's animation
-            //         scrollTrigger: {
-            //             trigger: boxesContainer, // Use the main container as the trigger for the whole batch
-            //             start: "top 75%", // Start when the top of the container is 75% down the viewport
-            //             end: "bottom 50%", // End when the bottom of the container is at the middle of the viewport
-            //             scrub: true,
-            //         },
-            //     });
-            // }, boxesContainer);
-
 
             const ctx = gsap.context((self) => {
                 const boxes = self.selector(".box");
@@ -177,11 +214,31 @@
                 scrollTrigger: {
                     trigger: '.philosophy',
                     start: 'top 90%',
-                    end: 'bottom 50%',
+                    end: 'bottom 60%',
                     scrub: 1
                 }
             });
+			
 
+			// const projectItems = gsap.utils.toArray('.project-item');
+
+			// projectItems.forEach((project, index) => {
+			// 	// The last item doesn't need to scale down, it will just stay on top
+			// 	if (index === projectItems.length - 1) return;
+
+			// 	gsap.to(project, {
+			// 		scale: 0.95, // Scale down to 95%
+			// 		opacity: 1, 
+			// 		scrollTrigger: {
+			// 			trigger: project,
+			// 			start: 'top 90%', // Animation starts when the top of the item hits the top of the viewport
+			// 			end: 'bottom 90%', // Animation ends when the bottom of the item leaves the top of the viewport
+			// 			scrub: 0.5, // Smoothly ties the animation to the scrollbar
+			// 		}
+			// 	});
+			// });
+
+			
             // AnimeJS Animations
             let currentWidth = document.querySelector('.expanding').offsetWidth;
             const agencyText = new SplitType('.agency');
@@ -219,7 +276,6 @@
 			document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
 		}
 	}
-
 
 </script>
 
@@ -303,10 +359,11 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		<span class="text-primary agency inline-flex"> agency </span>
 	</h2>
 
-	<h1 class="relative mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl">
-		redefining <span class="mx-1 inline-flex font-normal italic md:mx-3">
+	<h1 class="relative  mx-auto text-center text-2xl font-semibold uppercase md:text-4xl lg:text-6xl">
+		redefining <span class="mx-1 w-fit inline-flex font-normal italic md:mx-3">
 			<TextScramble text="digital" duration={2.8} speed={0.06} />
-		</span> Solutions
+		</span>
+		<br class="block md:hidden"> Solutions
 	</h1>
 
 	<div
@@ -355,18 +412,19 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
+
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 
 	<div class="relative mx-auto flex-col text-gray-800 flex items-center justify-center p-16">
 
 	<p
-        use:animateIn={{ delay: 0.2, y: 4, duration: 0.5, onView: 0.2 }}
+        use:animateIn={{ delay: 0.2, y: 4, duration: 0.5, onView: 1 }}
 		class="mb-4 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:mb-8 md:w-full"
 	>
 		Our Philosophy
 	</p>
 
-        <h3 class="text-3xl tracking-tight font-medium w-2/3 leading-16 philosophy md:text-4xl lg:text-5xl">
+        <h3 class="text-3xl tracking-tight font-medium md:w-2/3 leading-12 md:leading-16 philosophy md:text-4xl lg:text-5xl">
             We craft digital experiences that feel <span class="italic text-gray-600">effortless</span> and look exceptional, combining design-forward thinking with robust engineering to build websites that truly perform.
         </h3>
 
@@ -383,8 +441,13 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
+			class="relative group grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
+
+			<!-- <div class="absolute w-48 hover-card flex h-72 rotate-2 border border-gray-300 left-1/3	 top-1/2 mx-auto -translate-x-1/2 -translate-y-1/2 transform items-center justify-center bg-gray-100 rounded-xl">
+				<p class="tracking-tight font-medium text-4xl text-gray-800">Hi!</p>
+			</div> -->
+
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
 			<div
 				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
@@ -413,8 +476,6 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		</div>
 	</div>
 </section>
-
-
 
 
 <section class="w-full hidden border-y border-gray-300 bg-gray-100 md:px-8">
@@ -422,12 +483,14 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- onmouseenter={() => (isActive = true)}
 	onmouseleave={() => (isActive = false)} -->
-	<div onclick={smoothScroll} class="relative mx-auto divide-y divide-gray-300 text-gray-800">
+	<div onclick={smoothScroll} class="relative mx-auto divide-y bg-blue-200 divide-gray-300 text-gray-800">
+
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
+			class="relative grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
+
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
 			<div
 				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
@@ -442,7 +505,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.8 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
+			class="relative grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
 		>
 			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
 			<div
@@ -457,17 +520,36 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
-<section id="projects">
+
+<section id="projects" class="">
 	<div class="space-y-12 p-6 md:space-y-16 md:p-12 lg:p-16">
 		{#each projects as project}
 			<div class="">
-				<a href={project.link} target="_blank" class="">
+				<a href={project.link} target="_blank" rel="noopener noreferrer" class="">
 					<Project {project} />
 				</a>
 			</div>
 		{/each}
 	</div>
 </section>
+
+
+<!-- Gemini -->
+<!-- <section id="projects" class="relative py-24">
+    <div class="space-y-12 p-6 md:space-y-16 md:p-12 lg:p-16">
+        {#each projects as project, i}
+            <div
+                class="project-item scale-110 pt-32 sticky"
+                style="top: {i * 2}rem; z-index: {i + 1};"
+            >
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <Project {project} />
+                </a>
+            </div>
+        {/each}
+    </div>
+</section> -->
+
 
 <section bind:this={boxesContainer} class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div class="container mx-auto grid grid-cols-1 divide-x  text-gray-800 md:grid-cols-2 lg:grid-cols-4">
@@ -485,6 +567,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
+
 <section
 	class="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-12 p-12 md:p-24 lg:p-32"
 >
@@ -501,4 +584,3 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		you, reach out to us right now!
 	</p>
 </section>
-

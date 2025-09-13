@@ -4,8 +4,8 @@
 	export let text = 'Scramble Me!';
 	export let duration = 0.8;
 	export let speed = 0.04;
-	export let characterSet =
-		'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	// export let characterSet ='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	export let characterSet ='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 	export let className = undefined;
 	export let trigger = true;
     export let onScrambleComplete = undefined;
