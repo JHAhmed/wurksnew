@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { animateIn, Logo } from '$lib';
+	import { animateIn, logo } from '$lib';
 	import Icon from '@iconify/svelte';
 	import { Tooltip } from 'bits-ui';
 	import { browser } from '$app/environment';
@@ -27,7 +27,7 @@
 
 
 		<span class="flex items-center justify-center px-4 py-2 text-white">
-<img src={Logo} class="h-6 invert" alt="">
+<img src={logo} class="h-6 invert" alt="">
 		</span>
 		<!-- <span class="flex items-center justify-center px-4 py-2 text-white">
 			<p>Contact</p>

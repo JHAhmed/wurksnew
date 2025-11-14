@@ -1,5 +1,5 @@
 export { default as ArchedArrow } from './assets/arched-arrow.svg';
-export { default as Logo } from './assets/logo.svg';
+export { default as logo } from './assets/logo.svg';
 
 import { animate, inView } from 'motion';
 export function animateIn(element, args = {}) {

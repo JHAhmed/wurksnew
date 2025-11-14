@@ -1,11 +1,11 @@
 <script>
 	import { page } from '$app/stores';
-	import { animateIn, Logo } from '$lib';
+	import { animateIn, logo } from '$lib';
 	import Icon, { loadIcon } from '@iconify/svelte';
 	import { browser } from '$app/environment';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { backInOut } from 'svelte/easing';
+	import { backInOut, circInOut } from 'svelte/easing';
 
 	let navLinks = [
 		{ name: 'About', href: '/what-we-do' },
@@ -22,13 +22,13 @@
 </script>
 
 <nav
-	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit  items-center justify-center space-x-2 rounded-full bg-white/50 p-2 shadow-md/5 backdrop-blur-md">
+	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit  items-center justify-center space-x-2 rounded-full bg-white md:bg-white/50 p-2 shadow-md/5 md:backdrop-blur-md">
 	<a
 		href="/"
 		aria-label="Return to home"
 		class="bg-primary flex flex-shrink-0 cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg">
 		<span class="flex items-center justify-center px-4 py-2 text-white">
-			<img src={Logo} class="h-3 invert sm:h-4 md:h-5" alt="Wurks Studio Logo" loading="lazy" />
+			<img src={logo} class="h-3 invert sm:h-4 md:h-5" alt="Wurks Studio logo" loading="lazy" />
 		</span>
 	</a>
 
@@ -59,20 +59,20 @@
 			<Icon icon={isMobileMenuOpen ? 'ph:x-bold' : 'ph:list-bold'} class="size-6" />
 		</span>
 	</button>
+	{#if isMobileMenuOpen}
+			<div
+				transition:slide={{ duration: 300, easing: circInOut  }}
+				class="flex w-full mx-auto min-w-sm inset-x-0 absolute z-50 top-16 -translate-x-1/4 flex-col space-y-2 rounded-2xl bg-white/40 p-3 shadow-lg backdrop-blur-sm md:hidden">
+				{#each navLinks as link}
+					<a
+						href={link.href}
+						class="hover:bg-primary flex cursor-pointer items-center justify-center rounded-full bg-none px-3 py-2 text-black transition-all duration-200 hover:text-white">
+						<span class="flex items-center justify-center p-1 px-2 py-1 md:px-4 md:py-2">
+							<p class="font-medium tracking-tight">{link.name}</p>
+						</span>
+					</a>
+				{/each}
+			</div>
+	{/if}
 </nav>
 
-{#if isMobileMenuOpen}
-		<div
-			transition:slide={{ duration: 500, easing: backInOut  }}
-			class="flex w-full mt-16 mx-auto max-w-md inset-x-0  absolute flex-col space-y-2 rounded-2xl bg-white/40 p-3 shadow-lg backdrop-blur-sm md:hidden">
-			{#each navLinks as link}
-				<a
-					href={link.href}
-					class="hover:bg-primary flex cursor-pointer items-center justify-center rounded-full bg-none px-3 py-2 text-black transition-all duration-200 hover:text-white">
-					<span class="flex items-center justify-center p-1 px-2 py-1 md:px-4 md:py-2">
-						<p class="font-medium tracking-tight">{link.name}</p>
-					</span>
-				</a>
-			{/each}
-		</div>
-{/if}

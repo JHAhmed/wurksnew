@@ -22,7 +22,7 @@
 	let hoverTestimonial = $state(false);
 	let hoverButton = $state(false);
 
-	let boxesContainer;
+	let boxesContainer = $state(null);
 
 	let testimonials = [
 		{
@@ -236,8 +236,7 @@
 	<title>Wurks Studio | Minimalist Web Design & Development in Chennai</title>
 	<meta
 		name="description"
-		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation."
-	/>
+		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation." />
 	<meta name="robots" content="index, follow" />
 
 	<script type="application/ld+json">
@@ -272,8 +271,7 @@
 	<meta property="og:title" content="Wurks Studio" />
 	<meta
 		property="og:description"
-		content="A creative studio based in Chennai focused on modern minimalistic web design and development."
-	/>
+		content="A creative studio based in Chennai focused on modern minimalistic web design and development." />
 	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Wurks Studio" />
@@ -285,29 +283,25 @@
 <!-- animate-in
 use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 <section
-	class="my-16 flex flex-col items-center justify-center text-gray-900 select-none sm:my-24 md:my-32"
->
+	class="my-16 flex flex-col items-center justify-center text-gray-900 select-none sm:my-24 md:my-32">
 	<h1
-		class="mb-8 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:mb-12 md:w-full"
-	>
+		class="mb-8 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:mb-12 md:w-full">
 		Minimalistic Web Design & Development
 	</h1>
 
 	<h2
-		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl"
-	>
+		class="relative inline-flex items-center justify-center gap-x-2 text-center text-2xl font-semibold uppercase md:gap-x-4 md:text-4xl lg:text-6xl">
 		The
 		<span class="inline-flex">
 			<span class="font-medium"
 				>m<span
 					class="expanding m-0 inline-flex size-[18px] rounded-full border-2 border-gray-900 p-0 md:size-7 md:border-3 lg:size-11 lg:border-5"
-				></span>dern</span
-			>
+				></span
+				>dern</span>
 		</span>
 		<Icon
 			icon="octicon:sparkle-fill-24"
-			class="animate-spin-slow text-primary relative inline h-4 w-fit animate-spin md:h-6 lg:h-8"
-		/>
+			class="animate-spin-slow text-primary relative inline h-4 w-fit animate-spin md:h-6 lg:h-8" />
 
 		<span class="text-primary agency inline-flex"> agency </span>
 	</h2>
@@ -322,22 +316,18 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	<div
 		animate-in
 		use:animateIn={{ delay: 0.8, y: 10, blur: 2 }}
-		class="mt-4 flex w-full flex-col space-y-4 p-4 text-left sm:p-6 md:mt-8 md:text-center"
-	>
+		class="mt-4 flex w-full flex-col space-y-4 p-4 text-left sm:p-6 md:mt-8 md:text-center">
 		<div class="mx-auto w-full max-w-7xl space-y-8">
 			<p
-				class="md:text-md relative mx-auto w-fit rounded-full border-2 border-black bg-yellow-300 p-2 px-4 text-xs font-light text-gray-800 sm:p-3 sm:px-6 sm:text-sm lg:text-lg"
-			>
+				class="md:text-md relative mx-auto w-fit rounded-full border-2 border-black bg-yellow-300 p-2 px-4 text-xs font-light text-gray-800 sm:p-3 sm:px-6 sm:text-sm lg:text-lg">
 				Based in <span class="font-normal">Chennai, India.</span>
 				<span
 					animate-in
 					use:animateIn={{ delay: 1.4, y: 4, blur: 4, scale: 0.5, duration: 0.3 }}
-					class="absolute -top-2 -right-2 flex"
-				>
+					class="absolute -top-2 -right-2 flex">
 					<Icon
 						icon="ph:heart-straight-fill"
-						class="ml-2 size-6 rotate-[20deg] text-pink-500 sm:ml-3 sm:size-8"
-					/>
+						class="ml-2 size-6 rotate-[20deg] text-pink-500 sm:ml-3 sm:size-8" />
 				</span>
 			</p>
 		</div>
@@ -347,8 +337,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	<div
 		onmouseenter={() => (hoverTestimonial = true)}
 		onmouseleave={() => (hoverTestimonial = false)}
-		class="max-w-9xl z-5 mt-12 grid w-full grid-cols-1 gap-4 px-8 md:grid-cols-3"
-	>
+		class="max-w-9xl z-5 mt-12 grid w-full grid-cols-1 gap-4 px-8 md:grid-cols-3">
 		{#each testimonials as { quote, name, company }, i}
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<div
@@ -357,8 +346,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 				class="{hoverTestimonial && blurTestimonial !== i ? 'scale-[99%] blur-xs' : ''} 
 				{hoverTestimonial && blurTestimonial == i
 					? 'border-gray-300/100 bg-white/20'
-					: ''} rounded-xl border border-gray-300/0 p-2 transition-all duration-250"
-			>
+					: ''} rounded-xl border border-gray-300/0 p-2 transition-all duration-250">
 				<Testimonial {quote} {name} {company} />
 			</div>
 		{/each}
@@ -367,18 +355,15 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="relative mx-auto flex flex-col items-center justify-center space-y-8 p-16 text-gray-800"
-	>
+		class="relative mx-auto flex flex-col items-center justify-center space-y-8 p-16 text-gray-800">
 		<p
 			use:animateIn={{ delay: 0.2, y: 4, duration: 0.5, onView: 1 }}
-			class="mb-4 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:w-full"
-		>
+			class="mb-4 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:w-full">
 			Our Philosophy
 		</p>
 
 		<h3
-			class="philosophy text-3xl leading-12 font-medium tracking-tight md:w-2/3 md:text-4xl md:leading-16 lg:text-5xl"
-		>
+			class="philosophy text-3xl leading-12 font-medium tracking-tight md:w-2/3 md:text-4xl md:leading-16 lg:text-5xl">
 			We craft digital experiences that feel <span class="text-gray-600 italic">effortless</span> and
 			look exceptional, combining design-forward thinking with robust engineering to build websites that
 			truly perform.
@@ -388,25 +373,22 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 			onmouseenter={() => (hoverButton = true)}
 			onmouseleave={() => (hoverButton = false)}
 			href="/what-we-do"
-			class="md:text-md hover:bg-primary group relative mx-auto w-fit rounded-full border-2 border-black bg-gray-50 p-2 px-4 text-xs font-medium text-gray-800 transition-all duration-200 hover:text-white active:scale-95 sm:p-3 sm:px-6 sm:text-sm lg:text-lg"
-		>
+			class="md:text-md hover:bg-primary group relative mx-auto w-fit rounded-full border-2 border-black bg-gray-50 p-2 px-4 text-xs font-medium text-gray-800 transition-all duration-200 hover:text-white active:scale-95 sm:p-3 sm:px-6 sm:text-sm lg:text-lg">
 			What does this mean?
 			{#if hoverButton}
 				<span
 					transition:scale={{ duration: 300, easing: circInOut }}
-					class="bg-secondary absolute -top-3 -right-3 inline-flex size-6 items-center justify-center rounded-full border-2 border-black text-black group-hover:text-black md:size-10"
-				>
+					class="bg-secondary absolute -top-3 -right-3 inline-flex size-6 items-center justify-center rounded-full border-2 border-black text-black group-hover:text-black md:size-10">
 					<Icon
 						icon="ph:arrow-right-bold"
-						class="inline h-4 w-4 -rotate-45 align-middle md:h-5 md:w-5"
-					/>
+						class="inline h-4 w-4 -rotate-45 align-middle md:h-5 md:w-5" />
 				</span>
 			{/if}
 		</a>
 	</div>
 </section>
 
-<section class="bg- w-full border-b border-gray-300 md:px-8">
+<section class="w-full  border-b border-gray-300 md:px-8">
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- onmouseenter={() => (isActive = true)}
@@ -415,16 +397,14 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
-			class="group relative grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
-		>
+			class="group relative grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16">
 			<!-- <div class="absolute w-48 hover-card flex h-72 rotate-2 border border-gray-300 left-1/3	 top-1/2 mx-auto -translate-x-1/2 -translate-y-1/2 transform items-center justify-center bg-gray-100 rounded-xl">
 				<p class="tracking-tight font-medium text-4xl text-gray-800">Hi!</p>
 			</div> -->
 
 			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
 			<div
-				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
-			>
+				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg">
 				<p>Pixel-perfect UI design</p>
 				<p>UX that actually makes sense</p>
 				<p>Brand-first visual systems</p>
@@ -435,55 +415,10 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		<div
 			animate-in
 			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.8 }}
-			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
-		>
+			class="grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16">
 			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
 			<div
-				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
-			>
-				<p>Modern, lightweight frontends</p>
-				<p>Fast & scalable backends</p>
-				<p>SEO and performance optimization</p>
-				<p>Custom API integrations</p>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="hidden w-full border-y border-gray-300 bg-gray-100 md:px-8">
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<!-- svelte-ignore a11y_click_events_have_key_events -->
-	<!-- onmouseenter={() => (isActive = true)}
-	onmouseleave={() => (isActive = false)} -->
-	<div
-		onclick={smoothScroll}
-		class="relative mx-auto divide-y divide-gray-300 bg-blue-200 text-gray-800"
-	>
-		<div
-			animate-in
-			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0 }}
-			class="relative grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
-		>
-			<h3 class="wwd-design text-3xl font-medium md:text-5xl lg:text-6xl">Design</h3>
-			<div
-				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
-			>
-				<p>Pixel-perfect UI design</p>
-				<p>UX that actually makes sense</p>
-				<p>Brand-first visual systems</p>
-				<p>Prototyping & microinteractions</p>
-			</div>
-		</div>
-
-		<div
-			animate-in
-			use:animateIn={{ delay: 0.2, y: 6, blur: 8, duration: 0.5, onView: 0.8 }}
-			class="relative grid grid-cols-1 space-y-8 p-8 md:grid-cols-2 lg:p-16"
-		>
-			<h3 class="wwd-development text-3xl font-medium md:text-5xl lg:text-6xl">Development</h3>
-			<div
-				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg"
-			>
+				class="text-md grid grid-cols-1 gap-2 font-normal text-gray-600 md:grid-cols-2 md:gap-4 lg:text-lg">
 				<p>Modern, lightweight frontends</p>
 				<p>Fast & scalable backends</p>
 				<p>SEO and performance optimization</p>
@@ -507,25 +442,9 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
-<!-- Gemini -->
-<!-- <section id="projects" class="relative py-24">
-    <div class="space-y-12 p-6 md:space-y-16 md:p-12 lg:p-16">
-        {#each projects as project, i}
-            <div
-                class="project-item scale-110 pt-32 sticky"
-                style="top: {i * 2}rem; z-index: {i + 1};"
-            >
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <Project {project} />
-                </a>
-            </div>
-        {/each}
-    </div>
-</section> -->
-
 <section bind:this={boxesContainer} class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="container mx-auto grid grid-cols-1 divide-x text-gray-800 md:grid-cols-2 lg:grid-cols-4"
+		class="container mx-auto grid grid-cols-1 md:divide-x text-gray-800 md:grid-cols-2 lg:grid-cols-4"
 	>
 		{#each facts as fact, i}
 			<div
@@ -541,8 +460,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 </section>
 
 <section
-	class="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-12 p-12 md:p-24 lg:p-32"
->
+	class="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-12 p-12 md:p-24 lg:p-32">
 	<p class="tagline text-lg font-medium tracking-tight text-gray-900 md:text-2xl lg:text-4xl">
 		We don't believe in wasting time. Let's be real - if you aren't convinced yet, there's not much
 		we can do to convince you.
