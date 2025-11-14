@@ -12,7 +12,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { SplitText } from 'gsap/SplitText';
-	import { cubicInOut } from 'svelte/easing';
+	import { circInOut } from 'svelte/easing';
 
 	// let { data } = $props();
 	// let projects = data.projects;
@@ -393,7 +393,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 			What does this mean?
 			{#if hoverButton}
 				<span
-					transition:scale={{ duration: 300, easing: cubicInOut }}
+					transition:scale={{ duration: 300, easing: circInOut }}
 					class="bg-secondary absolute -top-3 -right-3 inline-flex size-6 items-center justify-center rounded-full border-2 border-black text-black group-hover:text-black md:size-10"
 				>
 					<Icon
