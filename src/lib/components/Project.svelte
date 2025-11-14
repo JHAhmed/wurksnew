@@ -5,6 +5,14 @@
 	import Icon from '@iconify/svelte';
 	let { project } = $props();
 
+	function getTitleCase(str) {
+		return str
+			.toLowerCase()
+			.split(' ')
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join(' ');
+	}
+
 	function mapTooltip(program) {
 		program = program.split(':')[1];
 		switch (program) {
@@ -29,7 +37,7 @@
 			case 'appwrite':
 				return 'Appwrite';
 			default:
-				return 'JavaScript';
+				return getTitleCase(program);
 		}
 	}
 

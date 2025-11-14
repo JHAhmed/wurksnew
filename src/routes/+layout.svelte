@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 	import { Navbar, Footer } from '$shared';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 
 	let { children } = $props();
@@ -29,7 +29,6 @@
 		};
 	});
 
-	// console.log($page.url.pathname);
 </script>
 
 <svelte:head>
@@ -38,6 +37,11 @@
 		name="description"
 		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation."
 	/>
+
+	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Wurks Studio" />
+	<meta property="og:url" content="https://wurks.studio/" />
 
 	<script type="text/javascript">
 		(function (c, l, a, r, i, t, y) {
@@ -86,8 +90,8 @@
 
 	<div class="z-20 flex min-h-screen flex-col items-center justify-center bg-gray-50">
 		<div class="z-30 py-12">
-			{#key $page.url.pathname}
-				{#if $page.url.pathname !== '/form'}
+			{#key page.url.pathname}
+				{#if page.url.pathname !== '/form'}
 					<Navbar />
 				{:else}
 					<div class="h-16"></div>
@@ -97,7 +101,7 @@
 		{@render children()}
 	</div>
 	<div class="p-4 md:p-8">
-		{#if $page.url.pathname !== '/form'}
+		{#if page.url.pathname !== '/form'}
 			<Footer />
 		{:else}
 			<div class="h-4"></div>

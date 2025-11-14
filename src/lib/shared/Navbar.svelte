@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import { animateIn, Logo } from '$lib';
 	import Icon from '@iconify/svelte';
-	import { Tooltip } from 'bits-ui';
 	import { browser } from '$app/environment';
 </script>
 
@@ -14,13 +13,11 @@
 		aria-label="Return to home"
 		class="bg-primary flex flex-shrink-0 cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
 	>
-		<span class="flex items-center justify-center px-4 py-3 text-white">
-			<img src={Logo} class="h-3 sm:h-4 invert md:h-6" alt="Wurks Studio Logo" loading="lazy" />
+		<span class="flex items-center justify-center px-4 py-2 text-white">
+			<img src={Logo} class="h-3 sm:h-4 invert md:h-5" alt="Wurks Studio Logo" loading="lazy" />
 		</span>
-	</a>
+	</a>	
 
-	<!-- class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg" -->
-	
 	<a
 		href="/contact"
 		class="bg-none text-black hover:bg-primary hover:text-white flex cursor-pointer items-center justify-center transition-all duration-200 rounded-full px-3 py-2 shadow-lg"
@@ -32,12 +29,20 @@
 	</a>
 
 	<a
+		href="/what-we-do"
+		class="bg-none text-black hover:bg-primary hover:text-white flex cursor-pointer items-center justify-center transition-all duration-200 rounded-full px-3 py-2 shadow-lg"
+	>
+		<span class="flex items-center justify-center p-1 sm:px-2 sm:py-1 md:px-4 md:py-2">
+			<p class="font-medium tracking-tight">About</p>
+		</span>
+	</a>
+
+	<a
 		href="/form"
 		class="bg-none text-black hover:bg-primary hover:text-white flex cursor-pointer items-center justify-center transition-all duration-200 rounded-full px-3 py-2 shadow-lg"
 	>
 		<span class="flex items-center justify-center p-1 sm:px-2 sm:py-1 md:px-4 md:py-2">
 			<p class="font-medium tracking-tight">Enquiry</p>
-			<!-- <Icon icon="heroicons:information-circle" class="ml-3 size-6 rounded-full bg-white p-1 text-black" /> -->
 		</span>
 	</a>
 
