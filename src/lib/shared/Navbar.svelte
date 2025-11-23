@@ -22,7 +22,7 @@
 </script>
 
 <nav
-	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit  items-center justify-center space-x-2 rounded-full bg-white md:bg-white/50 p-2 shadow-md/5 md:backdrop-blur-md">
+	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit items-center justify-center space-x-2 rounded-full bg-white p-2 shadow-md/5 md:bg-white/50 md:backdrop-blur-md">
 	<a
 		href="/"
 		aria-label="Return to home"
@@ -60,19 +60,18 @@
 		</span>
 	</button>
 	{#if isMobileMenuOpen}
-			<div
-				transition:slide={{ duration: 300, easing: circInOut  }}
-				class="flex w-full mx-auto min-w-sm inset-x-0 absolute z-50 top-16 -translate-x-1/4 flex-col space-y-2 rounded-2xl bg-white/40 p-3 shadow-lg backdrop-blur-sm md:hidden">
-				{#each navLinks as link}
-					<a
-						href={link.href}
-						class="hover:bg-primary flex cursor-pointer items-center justify-center rounded-full bg-none px-3 py-2 text-black transition-all duration-200 hover:text-white">
-						<span class="flex items-center justify-center p-1 px-2 py-1 md:px-4 md:py-2">
-							<p class="font-medium tracking-tight">{link.name}</p>
-						</span>
-					</a>
-				{/each}
-			</div>
+		<div
+			transition:slide={{ duration: 300, easing: circInOut }}
+			class="absolute inset-x-0 top-16 z-50 mx-auto flex w-full min-w-sm -translate-x-1/4 flex-col space-y-2 rounded-2xl bg-white/40 p-3 shadow-lg backdrop-blur-sm md:hidden">
+			{#each navLinks as link}
+				<a
+					href={link.href}
+					class="hover:bg-primary flex cursor-pointer items-center justify-center rounded-full bg-none px-3 py-2 text-black transition-all duration-200 hover:text-white">
+					<span class="flex items-center justify-center p-1 px-2 py-1 md:px-4 md:py-2">
+						<p class="font-medium tracking-tight">{link.name}</p>
+					</span>
+				</a>
+			{/each}
+		</div>
 	{/if}
 </nav>
-

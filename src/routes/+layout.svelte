@@ -28,15 +28,13 @@
 			lenis.destroy(); // Clean up on unmount
 		};
 	});
-
 </script>
 
 <svelte:head>
 	<title>Wurks Studio | Minimalist Web Design & Development in Chennai</title>
 	<meta
 		name="description"
-		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation."
-	/>
+		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation." />
 
 	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
 	<meta property="og:type" content="website" />
@@ -63,8 +61,7 @@
 
 <UmamiAnalytics
 	websiteID="cd63bfd5-f4d1-4098-9de6-3167c99958d3"
-	srcURL="https://cloud.umami.is/script.js"
-/>
+	srcURL="https://cloud.umami.is/script.js" />
 
 <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	<filter id="noise">

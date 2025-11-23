@@ -19,15 +19,11 @@
 </script>
 
 <nav
-	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit items-center justify-center space-x-2 rounded-full"
->
+	class="fixed inset-x-0 top-8 z-10 mx-auto flex w-fit items-center justify-center space-x-2 rounded-full">
 	<button
-		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
-	>
-
-
+		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg">
 		<span class="flex items-center justify-center px-4 py-2 text-white">
-<img src={logo} class="h-6 invert" alt="">
+			<img src={logo} class="h-6 invert" alt="" />
 		</span>
 		<!-- <span class="flex items-center justify-center px-4 py-2 text-white">
 			<p>Contact</p>
@@ -35,15 +31,13 @@
 		</span> -->
 	</button>
 	<ul
-		class="flex items-center justify-center space-x-2 rounded-full bg-white/50 p-2 shadow-md/5 backdrop-blur-md"
-	>
+		class="flex items-center justify-center space-x-2 rounded-full bg-white/50 p-2 shadow-md/5 backdrop-blur-md">
 		{#each links as link, i}
 			{#if selected === i}
 				<li class="flex items-center justify-center rounded-full bg-black/10">
 					<a
 						href={link.href}
-						class="flex h-full w-full items-center justify-center px-5 py-2 text-black"
-					>
+						class="flex h-full w-full items-center justify-center px-5 py-2 text-black">
 						{link.name}
 					</a>
 				</li>
@@ -51,8 +45,7 @@
 				<li class="flex items-center justify-center rounded-full hover:bg-black/5">
 					<a
 						href={link.href}
-						class="flex h-full w-full items-center justify-center px-5 py-2 text-black"
-					>
+						class="flex h-full w-full items-center justify-center px-5 py-2 text-black">
 						{link.name}
 					</a>
 				</li>
@@ -60,9 +53,8 @@
 		{/each}
 	</ul>
 	<a
-	href="/contact"
-		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg"
-	>
+		href="/contact"
+		class="bg-primary flex cursor-pointer items-center justify-center rounded-full px-3 py-2 shadow-lg">
 		<span class="flex items-center justify-center px-4 py-2 text-white">
 			<p>Contact</p>
 			<Icon icon="heroicons:arrow-right" class="ml-3 size-6 rounded-full bg-white p-1 text-black" />

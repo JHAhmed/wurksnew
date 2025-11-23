@@ -91,8 +91,8 @@
 			<span class="text-gray-600 italic">
 				Just clear, clean design paired with solid engineering underneath.
 			</span>
-			Whether you're a small business, a startup, or a growing brand, we make sure your online
-			presence actually works for you, not against you.
+			Whether you're a small business, a startup, or a growing brand, we make sure your online presence
+			actually works for you, not against you.
 
 			<br /> <br />
 

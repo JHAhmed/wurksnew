@@ -36,11 +36,9 @@
 			<div
 				animate-in
 				use:animateIn={{ blur: 4, scale: 0.95, duration: 0.3, onView: 0.3 }}
-				class="bg-secondary rotated absolute bottom-4 z-10 w-fit -rotate-4 p-2 text-xl font-light text-black md:p-4 md:text-3xl"
-			>
+				class="bg-secondary rotated absolute bottom-4 z-10 w-fit -rotate-4 p-2 text-xl font-light text-black md:p-4 md:text-3xl">
 				<a class="decoration-1 underline-offset-2 hover:underline" href="mailto:haneef@wurks.studio"
-					>haneef@wurks.studio</a
-				>
+					>haneef@wurks.studio</a>
 			</div>
 		</div>
 	</div>

@@ -53,21 +53,18 @@
 		role="region"
 		animate-in
 		use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.6, onView: 0.3 }}
-		class="project-container max-w-7xl cursor-none"
-	>
+		class="project-container max-w-7xl cursor-none">
 		<div class="relative">
 			<img
 				src={project.image.fields.file.url}
 				class="aspect-video rounded-xl object-cover"
 				alt="Minimalist website design for {project.title}"
-				loading="lazy"
-			/>
+				loading="lazy" />
 			<div
 				onmouseenter={() => (isActive = false)}
 				onmouseleave={() => (isActive = true)}
 				role="region"
-				class="absolute bottom-3 left-3 flex rounded-full bg-white px-4 py-2 text-black shadow-sm/10"
-			>
+				class="absolute bottom-3 left-3 flex rounded-full bg-white px-4 py-2 text-black shadow-sm/10">
 				{#each project.technologies as tech, i}
 					<Tooltip.Provider>
 						<Tooltip.Root delayDuration={100}>
@@ -75,19 +72,17 @@
 								animate-in
 								use:animateIn={{ delay: i / 5, blur: 4 }}
 								target="_blank"
-								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-200 "
-								rel="noopener noreferrer"
-							>
+								class="mx-1 flex w-fit items-center rounded-full p-1 hover:bg-gray-200"
+								rel="noopener noreferrer">
 								<Tooltip.Trigger name={`${mapTooltip(tech)} icon`}>
-									<div class="flex size-4 items-center justify-center md:size-8 ">
+									<div class="flex size-4 items-center justify-center md:size-8">
 										<Icon icon={tech} class="size-6 p-0.5" />
 									</div>
 								</Tooltip.Trigger>
 							</div>
 							<Tooltip.Content sideOffset={0}>
 								<div
-									class="z-20 mb-1 flex items-center justify-center rounded-xl bg-white/80 p-3 text-sm font-medium outline-hidden"
-								>
+									class="z-20 mb-1 flex items-center justify-center rounded-xl bg-white/80 p-3 text-sm font-medium outline-hidden">
 									{mapTooltip(tech)}
 								</div>
 							</Tooltip.Content>
@@ -97,7 +92,7 @@
 			</div>
 		</div>
 		<div class="flex justify-between py-4">
-			<h4 class="basis-1/3 tracking-tight text-lg font-medium md:text-2xl">{project.title}</h4>
+			<h4 class="basis-1/3 text-lg font-medium tracking-tight md:text-2xl">{project.title}</h4>
 
 			<p class="basis-2/3 text-sm text-gray-800 md:text-lg">{project.summary}</p>
 		</div>

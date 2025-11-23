@@ -26,8 +26,7 @@
 		class="relative h-full w-full animate-spin"
 		style="animation-duration: {animationDuration}s; animation-direction: {reverse
 			? 'reverse'
-			: 'normal'}; animation-timing-function: linear; animation-iteration-count: infinite;"
-	>
+			: 'normal'}; animation-timing-function: linear; animation-iteration-count: infinite;">
 		{#each letters as letter, index}
 			<span
 				aria-hidden="true"
@@ -42,8 +41,7 @@
               translate(-50%, -50%) /* Center the letter */
               rotate(calc(360deg / var(--total) * var(--index))) /* Position on circle */
               translateY(calc(var(--radius, 5) * -1ch)); /* Move out from center */
-          "
-			>
+          ">
 				{letter}
 			</span>
 		{/each}
