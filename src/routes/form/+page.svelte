@@ -1,51 +1,52 @@
 <script>
+	// No script needed unless you add custom logic later
 </script>
 
 <svelte:head>
-	<meta
-		name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-	/>
-	<title>Wurks Studio - Enquiry Form</title>
+	<title>Start a Project | Wurks Studio</title>
 	<meta
 		name="description"
-		content="Enquiry form for Wurks Studio, a creative studio focused on minimalistic web design and development."
-	/>
+		content="Ready to build something great? Fill out our enquiry form to start your web design or development project with Wurks Studio." />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="canonical" href="https://wurks.studio/form" />
+
+	<meta property="og:title" content="Start a Project | Wurks Studio" />
+	<meta
+		property="og:description"
+		content="Tell us about your project. We specialize in minimalist, high-performance web design." />
+	<meta property="og:image" content="https://wurks.studio/ogimage-form.png" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ContactPage",
+			"name": "Project Enquiry",
+			"description": "Request a quote or consultation for web design and development services.",
+			"url": "https://wurks.studio/form",
+			"mainEntity": {
+				"@type": "Organization",
+				"name": "Wurks Studio",
+				"url": "https://wurks.studio"
+			}
+		}
+	</script>
+
 	<script async src="https://tally.so/widgets/embed.js"></script>
-	<style type="text/css">
+
+	<style>
 		html {
 			margin: 0;
 			height: 100%;
-			/* overflow: hidden; */
-		}
-		iframe {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			border: 0;
+			overflow: hidden; /* Only keep this if you want to force no scrollbars outside the iframe */
 		}
 	</style>
-
-	<link rel="canonical" href="https://wurks.studio/" />
-	<meta property="og:title" content="Wurks Studio - Enquiry Form" />
-	<meta
-		property="og:description"
-		content="Enquiry form for Wurks Studio, a creative studio focused on minimalistic web design and development."
-	/>
-	<meta property="og:image" content="https://wurks.studio/ogimage-form.png" />
 </svelte:head>
 
-<div class="p-12">
+<div class="h-screen w-full bg-gray-50">
 	<iframe
-		class="z-50"
+		class="absolute inset-0 z-50 h-full w-full border-0"
 		data-tally-src="https://tally.so/r/n0y06j?transparentBackground=1"
-		width="100%"
-		height="100%"
-		frameborder="0"
-		marginheight="0"
-		marginwidth="0"
-		title="Wurks Studio - Enquiry"
-	></iframe>
+		title="Wurks Studio Project Enquiry Form"></iframe>
 </div>

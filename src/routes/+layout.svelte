@@ -66,13 +66,13 @@
 	srcURL="https://cloud.umami.is/script.js"
 />
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	<filter id="noise">
 		<feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="9" stitchTiles="stitch" />
 		<feColorMatrix type="saturate" values="0" />
 		<feBlend in="SourceGraphic" mode="overlay" />
 	</filter>
-</svg>
+</svg> -->
 
 <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 	<filter id="noise">
@@ -86,7 +86,7 @@
 </svg> -->
 
 <div class="relative min-h-screen bg-gray-50">
-	<div class="absolute inset-0 z-0" style="filter: url(#noise); opacity: 0.2;"></div>
+	<!-- <div class="absolute inset-0 z-0" style="filter: url(#noise); opacity: 0.2;"></div> -->
 
 	<div class="z-20 flex min-h-screen flex-col items-center justify-center bg-gray-50">
 		<div class="z-30 py-12">

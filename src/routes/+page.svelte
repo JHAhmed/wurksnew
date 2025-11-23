@@ -233,7 +233,7 @@
 </script>
 
 <svelte:head>
-	<title>Wurks Studio | Minimalist Web Design & Development in Chennai</title>
+	<title>Wurks Studio | Minimalist Web Design & Development Agency in Chennai</title>
 	<meta
 		name="description"
 		content="Wurks Studio is a freelance web development agency in Chennai, specializing in modern, minimalist web design. We build high-performance websites that are both beautiful and effective. Contact us for a consultation." />
@@ -257,6 +257,18 @@
 				"addressRegion": "TN",
 				"addressCountry": "IN"
 			},
+"sameAs": [
+    "https://www.linkedin.com/company/wurks-studio",
+],
+"geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "13.1143", // specific coords for Perambur
+    "longitude": "80.2435"
+},
+"areaServed": {
+    "@type": "City",
+    "name": "Chennai"
+}
 			"description": "A creative studio based in Chennai focused on modern minimalistic web design and development.",
 			"openingHoursSpecification": {
 				"@type": "OpeningHoursSpecification",
@@ -388,7 +400,7 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
-<section class="w-full  border-b border-gray-300 md:px-8">
+<section class="w-full border-b border-gray-300 md:px-8">
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- onmouseenter={() => (isActive = true)}
@@ -444,13 +456,11 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 
 <section bind:this={boxesContainer} class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="container mx-auto grid grid-cols-1 md:divide-x text-gray-800 md:grid-cols-2 lg:grid-cols-4"
-	>
+		class="container mx-auto grid grid-cols-1 text-gray-800 md:grid-cols-2 md:divide-x lg:grid-cols-4">
 		{#each facts as fact, i}
 			<div
 				class="box flex flex-col items-start space-y-4 border-b border-gray-300 p-6 transition-colors duration-200 md:space-y-8
-               md:border-b-0 md:p-8"
-			>
+               md:border-b-0 md:p-8">
 				<div class="text-2xl">{fact.emoji}</div>
 				<h3 class="text-lg font-medium md:text-2xl">{fact.title}</h3>
 				<p class="text-sm text-gray-600 md:text-lg">{fact.text}</p>

@@ -1,10 +1,16 @@
-// Example structure - adapt based on your data sources
-// import { fetchBlogPosts } from '$lib/server/database'; // Example function to get posts
-
 export async function GET({ url }) {
-	const lastmod = '2025-11-13';
-	const staticPages = ['/', '/contact', '/what-we-do', '/form']; // Your static pages
-	// const posts = await fetchBlogPosts(); // Fetch dynamic content
+	// Use today's date for static pages so Google sees them as "verified" recently
+	const currentDate = new Date().toISOString().split('T')[0];
+	
+	const staticPages = [
+		'/', 
+		'/contact', 
+		'/what-we-do', 
+		'/form'
+	];
+
+	// TODO: Import your actual data fetcher here when ready
+	// const projects = await fetchProjects(); 
 
 	let xml = '<?xml version="1.0" encoding="UTF-8"?>';
 	xml += `<urlset
@@ -16,27 +22,34 @@ export async function GET({ url }) {
 			xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 		>`;
 
-	// Add static pages
+	// Static Pages
 	staticPages.forEach((page) => {
-		xml += `<url><loc>${url.origin}${page}</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`;
+		xml += `
+		<url>
+			<loc>${url.origin}${page}</loc>
+			<lastmod>${currentDate}</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>${page === '/' ? '1.0' : '0.8'}</priority>
+		</url>`;
 	});
 
-	// Add dynamic pages (e.g., blog posts)
-	// posts.forEach(post => {
-	//     xml += `<url>`;
-	//     xml += `<loc>${url.origin}/blog/${post.slug}</loc>`;
-	//     if (post.updated_at) {
-	//         xml += `<lastmod>${new Date(post.updated_at).toISOString().split('T')[0]}</lastmod>`; // Format date as YYYY-MM-DD
-	//     }
-	//     xml += `<changefreq>daily</changefreq>`;
-	//     xml += `<priority>0.6</priority>`;
-	//     xml += `</url>`;
-	// });
+	// Dynamic Pages (Example Implementation)
+	// if (projects) {
+	// 	projects.forEach(project => {
+	// 		xml += `
+	// 		<url>
+	// 			<loc>${url.origin}/projects/${project.slug}</loc>
+	// 			<lastmod>${new Date(project.updated_at || currentDate).toISOString().split('T')[0]}</lastmod>
+	// 			<changefreq>monthly</changefreq>
+	// 			<priority>0.7</priority>
+	// 		</url>`;
+	// 	});
+	// }
 
 	xml += '</urlset>';
 
 	const response = new Response(xml);
-	response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600'); // Optional caching
+	response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
 	response.headers.set('Content-Type', 'application/xml');
 	return response;
 }
