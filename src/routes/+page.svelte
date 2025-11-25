@@ -247,7 +247,7 @@
 			"image": "https://wurks.studio/ogimage.png",
 			"@id": "https://wurks.studio/",
 			"url": "https://wurks.studio/",
-			"telephone": "+91 93452 11256",
+			"telephone": "+919345211256",
 			"priceRange": "$$",
 			"address": {
 				"@type": "PostalAddress",
@@ -257,25 +257,25 @@
 				"addressRegion": "TN",
 				"addressCountry": "IN"
 			},
-"sameAs": [
-    "https://www.linkedin.com/company/wurks-studio",
-],
-"geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "13.1143", // specific coords for Perambur
-    "longitude": "80.2435"
-},
-"areaServed": {
-    "@type": "City",
-    "name": "Chennai"
-}
+			"sameAs": ["https://www.linkedin.com/company/wurks-studio"],
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 13.1143,
+				"longitude": 80.2435
+			},
+			"areaServed": {
+				"@type": "City",
+				"name": "Chennai"
+			},
 			"description": "A creative studio based in Chennai focused on modern minimalistic web design and development.",
-			"openingHoursSpecification": {
-				"@type": "OpeningHoursSpecification",
-				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-				"opens": "09:00",
-				"closes": "18:00"
-			}
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+					"opens": "09:00",
+					"closes": "18:00"
+				}
+			]
 		}
 	</script>
 
@@ -286,7 +286,6 @@
 		content="A creative studio based in Chennai focused on modern minimalistic web design and development." />
 	<meta property="og:image" content="https://wurks.studio/ogimage.png" />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="Wurks Studio" />
 	<meta property="og:url" content="https://wurks.studio/" />
 </svelte:head>
 
