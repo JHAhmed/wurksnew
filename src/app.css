@@ -36,3 +36,9 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+body {
+    background-color: #f9fafb; /* This is the hex for Tailwind's gray-50 */
+    overflow-x: hidden;
+}
+

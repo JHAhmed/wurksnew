@@ -28,12 +28,12 @@
 		{
 			quote:
 				"Wurks Studio genuinely has some of the most innovative design work I've seen. They excel in outputting stunning, high-quality, and high-performance websites.",
-			name: 'Shivani I.',
+			name: 'Priyanka B.',
 			company: 'CloudCam App'
 		},
 		{
 			quote:
-				'Peak design. Peak vibes. And peak development. Wurks makes minimalism and modern design look effortless, and honestly? It just works.',
+				'Clean, modern, and fast. Wurks Studio gave us a website that feels premium without being overdesigned—and the build quality behind the scenes is just as solid as the visuals.',
 			name: 'Abdul M.',
 			company: 'Baseline Studio, Chennai'
 		},
@@ -271,7 +271,7 @@
 			"openingHoursSpecification": [
 				{
 					"@type": "OpeningHoursSpecification",
-					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
 					"opens": "09:00",
 					"closes": "18:00"
 				}
@@ -289,7 +289,7 @@
 	<meta property="og:url" content="https://wurks.studio/" />
 </svelte:head>
 
-<Cursor {isActive} />
+<!-- <Cursor {isActive} /> -->
 
 <!-- animate-in
 use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
@@ -366,15 +366,15 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="relative mx-auto flex flex-col items-center justify-center space-y-8 p-16 text-gray-800">
+		class="relative mx-auto flex flex-col items-center justify-center space-y-12 p-12 md:p-16 text-gray-800">
 		<p
 			use:animateIn={{ delay: 0.2, y: 4, duration: 0.5, onView: 1 }}
-			class="mb-4 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:w-full">
+			class=" w-2/3 mb-6 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:w-full">
 			Our Philosophy
 		</p>
 
 		<h3
-			class="philosophy text-3xl leading-12 font-medium tracking-tight md:w-2/3 md:text-4xl md:leading-16 lg:text-5xl">
+			class="philosophy text-3xl leading-10 font-medium tracking-tight md:w-2/3 md:text-4xl md:leading-16 lg:text-5xl">
 			We craft digital experiences that feel <span class="text-gray-600 italic">effortless</span> and
 			look exceptional, combining design-forward thinking with robust engineering to build websites that
 			truly perform.
