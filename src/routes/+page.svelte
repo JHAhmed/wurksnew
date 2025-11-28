@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import Icon from '@iconify/svelte';
 	import { animateIn } from '$lib';
-	import { TextScramble, Project, Testimonial } from '$components';
+	import { TextScramble, Project, Testimonial, Pricing } from '$components';
 	import { Cursor } from '$shared';
 	import { animate } from 'animejs';
 	import SplitType from 'split-type';
@@ -40,8 +40,8 @@
 		{
 			quote:
 				'Wurks Studio turned our half-baked ideas into a site that looks great and actually works. Clear timelines, solid communication, and zero stress. Would recommend.',
-			name: 'Mansur Ali',
-			company: 'Six Red Marbles'
+			name: 'Rishi Kumar',
+			company: ''
 		}
 	];
 
@@ -366,10 +366,10 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 
 <section class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
-		class="relative mx-auto flex flex-col items-center justify-center space-y-12 p-12 md:p-16 text-gray-800">
+		class="relative mx-auto flex flex-col items-center justify-center space-y-12 p-12 text-gray-800 md:p-16">
 		<p
 			use:animateIn={{ delay: 0.2, y: 4, duration: 0.5, onView: 1 }}
-			class=" w-2/3 mb-6 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:w-full">
+			class=" mb-6 w-2/3 text-center text-sm font-medium tracking-[0.1em] text-gray-600 uppercase md:w-full">
 			Our Philosophy
 		</p>
 
@@ -451,6 +451,10 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 			{/each}
 		{/await}
 	</div>
+</section>
+
+<section class="w-full border-t border-gray-300 bg-gray-100 md:px-8">
+	<Pricing />
 </section>
 
 <section bind:this={boxesContainer} class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
