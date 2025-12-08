@@ -37,8 +37,7 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-body {
-    background-color: #f9fafb; /* This is the hex for Tailwind's gray-50 */
+/* body {
+    background-color: #f9fafb;
     overflow-x: hidden;
-}
-
+} */

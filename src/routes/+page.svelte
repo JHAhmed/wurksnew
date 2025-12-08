@@ -13,6 +13,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { SplitText } from 'gsap/SplitText';
 	import { circInOut } from 'svelte/easing';
+	import WhatsAppIcon from '$shared/WhatsAppIcon.svelte';
 
 	// let { data } = $props();
 	// let projects = data.projects;
@@ -453,9 +454,9 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 	</div>
 </section>
 
-<section class="w-full border-t border-gray-300 bg-gray-100 md:px-8">
+<!-- <section class="w-full border-t border-gray-300 bg-gray-100 md:px-8">
 	<Pricing />
-</section>
+</section> -->
 
 <section bind:this={boxesContainer} class="w-full border-y border-gray-300 bg-gray-100 md:px-8">
 	<div
@@ -483,3 +484,5 @@ use:animateIn={{ delay: 0.4, y: 6, blur: 8, duration: 0.5 }} -->
 		you, reach out to us right now!
 	</p>
 </section>
+
+<WhatsAppIcon />

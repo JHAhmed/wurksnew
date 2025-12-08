@@ -31,6 +31,8 @@
 </script>
 
 <svelte:head>
+	<link rel="icon" href="favicon.ico" />
+
 	<title>Wurks Studio | Minimalist Web Design & Development in Chennai</title>
 	<meta
 		name="description"
@@ -82,7 +84,7 @@
 	</filter>
 </svg> -->
 
-<div class="relative overflow-x-hidden min-h-screen bg-gray-50">
+<div class="relative min-h-screen overflow-x-hidden bg-gray-50">
 	<!-- <div class="absolute inset-0 z-0" style="filter: url(#noise); opacity: 0.2;"></div> -->
 
 	<div class="z-20 flex min-h-screen flex-col items-center justify-center bg-gray-50">
