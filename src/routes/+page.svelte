@@ -248,7 +248,7 @@
 			"image": "https://wurks.studio/ogimage.png",
 			"@id": "https://wurks.studio/",
 			"url": "https://wurks.studio/",
-			"telephone": "+919345211256",
+			"telephone": "+919342601256",
 			"priceRange": "$$",
 			"address": {
 				"@type": "PostalAddress",
