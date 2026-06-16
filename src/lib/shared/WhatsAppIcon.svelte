@@ -10,6 +10,7 @@
 	onmouseleave={(hover = false)}
 	href="https://api.whatsapp.com/send?phone=919342601256&text=Hi%20I%20have%20an%20inquiry%20about%20your%20services!"
 	aria-label="Chat on WhatsApp"
+	data-umami-event="WhatsApp Chat Button"
 	target="_blank"
 	class="fixed right-6 bottom-6 z-50 cursor-pointer md:right-8 md:bottom-8 lg:right-12 lg:bottom-12">
 	<div

@@ -77,7 +77,7 @@
 			s = b.getElementsByTagName(e)[0];
 			s.parentNode.insertBefore(t, s);
 		})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '2313487706059656');
+		fbq('init', '901825416260634');
 		fbq('track', 'PageView');
 	</script>
 	<noscript
@@ -85,7 +85,7 @@
 			height="1"
 			width="1"
 			style="display:none"
-			src="https://www.facebook.com/tr?id=2313487706059656&ev=PageView&noscript=1" /></noscript>
+			src="https://www.facebook.com/tr?id=901825416260634&ev=PageView&noscript=1" /></noscript>
 	<!-- End Meta Pixel Code -->
 
 	<!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="cd63bfd5-f4d1-4098-9de6-3167c99958d3"></script> -->
