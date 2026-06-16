@@ -44,6 +44,20 @@
 	<meta property="og:site_name" content="Wurks Studio" />
 	<meta property="og:url" content="https://wurks.studio/" />
 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18243839376"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'AW-18243839376');
+	</script>
+	<!-- End Google Tag Code -->
+
+	<!-- Microsoft Clarity Code -->
 	<script type="text/javascript">
 		(function (c, l, a, r, i, t, y) {
 			c[a] =
@@ -58,6 +72,7 @@
 			y.parentNode.insertBefore(t, y);
 		})(window, document, 'clarity', 'script', 'rq6kgdcekm');
 	</script>
+	<!-- End Microsoft Clarity Code -->
 
 	<!-- Meta Pixel Code -->
 	<script>
@@ -80,15 +95,14 @@
 		fbq('init', '901825416260634');
 		fbq('track', 'PageView');
 	</script>
-	<noscript
-		><img
+	<noscript>
+		<img
 			height="1"
 			width="1"
 			style="display:none"
-			src="https://www.facebook.com/tr?id=901825416260634&ev=PageView&noscript=1" /></noscript>
+			src="https://www.facebook.com/tr?id=901825416260634&ev=PageView&noscript=1" />
+	</noscript>
 	<!-- End Meta Pixel Code -->
-
-	<!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="cd63bfd5-f4d1-4098-9de6-3167c99958d3"></script> -->
 </svelte:head>
 
 <UmamiAnalytics
